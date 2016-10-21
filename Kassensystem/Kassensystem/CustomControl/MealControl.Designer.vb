@@ -62,6 +62,7 @@ Partial Class MealControl
         '
         Me.FullMealComboBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.FullMealComboBox.FormattingEnabled = True
+        Me.FullMealComboBox.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
         Me.FullMealComboBox.Location = New System.Drawing.Point(123, 14)
         Me.FullMealComboBox.Name = "FullMealComboBox"
         Me.FullMealComboBox.Size = New System.Drawing.Size(34, 21)

@@ -72,6 +72,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControl\CashRegisterPanel.Designer.vb">
+      <DependentUpon>CashRegisterPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\CashRegisterPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="CustomControl\MealControl.Designer.vb">
       <DependentUpon>MealControl.vb</DependentUpon>
     </Compile>
@@ -102,6 +108,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CustomControl\CashRegisterPanel.resx">
+      <DependentUpon>CashRegisterPanel.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\MealControl.resx">
       <DependentUpon>MealControl.vb</DependentUpon>
     </EmbeddedResource>

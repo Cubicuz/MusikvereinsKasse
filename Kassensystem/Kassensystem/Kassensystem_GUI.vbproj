@@ -72,16 +72,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomControl\CashRegisterPanel.Designer.vb">
+    <Compile Include="CashRegister\CashRegisterPanel.Designer.vb">
       <DependentUpon>CashRegisterPanel.vb</DependentUpon>
     </Compile>
-    <Compile Include="CustomControl\CashRegisterPanel.vb">
+    <Compile Include="CashRegister\CashRegisterPanel.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomControl\MealControl.Designer.vb">
+    <Compile Include="DiningPlan\MealControl.Designer.vb">
       <DependentUpon>MealControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="CustomControl\MealControl.vb">
+    <Compile Include="DiningPlan\MealControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MainWindow.vb">
@@ -108,10 +108,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CustomControl\CashRegisterPanel.resx">
+    <EmbeddedResource Include="CashRegister\CashRegisterPanel.resx">
       <DependentUpon>CashRegisterPanel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomControl\MealControl.resx">
+    <EmbeddedResource Include="DiningPlan\MealControl.resx">
       <DependentUpon>MealControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
@@ -135,6 +135,15 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CurrentOrder\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kassensystem_Logic\Kassensystem_Logic.csproj">
+      <Project>{F7410DFF-F297-4031-8229-D81D74D6881F}</Project>
+      <Name>Kassensystem_Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

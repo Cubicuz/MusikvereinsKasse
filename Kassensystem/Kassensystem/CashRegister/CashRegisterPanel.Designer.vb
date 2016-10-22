@@ -22,10 +22,8 @@ Partial Class CashRegisterPanel
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.MoneyInTextBox = New System.Windows.Forms.TextBox()
+        Me.MoneyOutTextBox = New System.Windows.Forms.TextBox()
         Me.BillTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.Euro100Button = New System.Windows.Forms.Button()
         Me.Euro50Button = New System.Windows.Forms.Button()
@@ -46,50 +44,31 @@ Partial Class CashRegisterPanel
         Me.Num0Button = New System.Windows.Forms.Button()
         Me.NumDotButton = New System.Windows.Forms.Button()
         Me.NumClearButton = New System.Windows.Forms.Button()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.AcceptReturnTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.ReturnButton = New System.Windows.Forms.Button()
         Me.AcceptButton = New System.Windows.Forms.Button()
-        Me.FlowLayoutPanel1.SuspendLayout()
-        Me.FlowLayoutPanel2.SuspendLayout()
+        Me.MainTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
+        Me.TextBoxTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.BillTableLayoutPanel.SuspendLayout()
         Me.NumeralTableLayoutPanel.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
+        Me.AcceptReturnTableLayoutPanel.SuspendLayout()
+        Me.MainTableLayoutPanel.SuspendLayout()
+        Me.TextBoxTableLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
         '
-        'FlowLayoutPanel1
+        'MoneyInTextBox
         '
-        Me.FlowLayoutPanel1.Controls.Add(Me.FlowLayoutPanel2)
-        Me.FlowLayoutPanel1.Controls.Add(Me.BillTableLayoutPanel)
-        Me.FlowLayoutPanel1.Controls.Add(Me.NumeralTableLayoutPanel)
-        Me.FlowLayoutPanel1.Controls.Add(Me.TableLayoutPanel1)
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(835, 333)
-        Me.FlowLayoutPanel1.TabIndex = 0
+        Me.MoneyInTextBox.Location = New System.Drawing.Point(3, 3)
+        Me.MoneyInTextBox.Name = "MoneyInTextBox"
+        Me.MoneyInTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.MoneyInTextBox.TabIndex = 0
         '
-        'FlowLayoutPanel2
+        'MoneyOutTextBox
         '
-        Me.FlowLayoutPanel2.Controls.Add(Me.TextBox1)
-        Me.FlowLayoutPanel2.Controls.Add(Me.TextBox2)
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(3, 3)
-        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(200, 274)
-        Me.FlowLayoutPanel2.TabIndex = 0
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(3, 3)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 0
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(3, 29)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 1
+        Me.MoneyOutTextBox.Location = New System.Drawing.Point(3, 143)
+        Me.MoneyOutTextBox.Name = "MoneyOutTextBox"
+        Me.MoneyOutTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.MoneyOutTextBox.TabIndex = 1
         '
         'BillTableLayoutPanel
         '
@@ -101,7 +80,8 @@ Partial Class CashRegisterPanel
         Me.BillTableLayoutPanel.Controls.Add(Me.Euro20Button, 0, 2)
         Me.BillTableLayoutPanel.Controls.Add(Me.Euro10Button, 0, 1)
         Me.BillTableLayoutPanel.Controls.Add(Me.Euro5Button, 0, 0)
-        Me.BillTableLayoutPanel.Location = New System.Drawing.Point(209, 3)
+        Me.BillTableLayoutPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BillTableLayoutPanel.Location = New System.Drawing.Point(115, 3)
         Me.BillTableLayoutPanel.Name = "BillTableLayoutPanel"
         Me.BillTableLayoutPanel.RowCount = 5
         Me.BillTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
@@ -181,7 +161,8 @@ Partial Class CashRegisterPanel
         Me.NumeralTableLayoutPanel.Controls.Add(Me.Num0Button, 0, 4)
         Me.NumeralTableLayoutPanel.Controls.Add(Me.NumDotButton, 2, 4)
         Me.NumeralTableLayoutPanel.Controls.Add(Me.NumClearButton, 1, 0)
-        Me.NumeralTableLayoutPanel.Location = New System.Drawing.Point(337, 3)
+        Me.NumeralTableLayoutPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NumeralTableLayoutPanel.Location = New System.Drawing.Point(243, 3)
         Me.NumeralTableLayoutPanel.Name = "NumeralTableLayoutPanel"
         Me.NumeralTableLayoutPanel.RowCount = 5
         Me.NumeralTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
@@ -325,19 +306,20 @@ Partial Class CashRegisterPanel
         Me.NumClearButton.Text = "clear"
         Me.NumClearButton.UseVisualStyleBackColor = True
         '
-        'TableLayoutPanel1
+        'AcceptReturnTableLayoutPanel
         '
-        Me.TableLayoutPanel1.ColumnCount = 1
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.ReturnButton, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.AcceptButton, 0, 1)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(560, 3)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(200, 280)
-        Me.TableLayoutPanel1.TabIndex = 4
+        Me.AcceptReturnTableLayoutPanel.ColumnCount = 1
+        Me.AcceptReturnTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.AcceptReturnTableLayoutPanel.Controls.Add(Me.ReturnButton, 0, 0)
+        Me.AcceptReturnTableLayoutPanel.Controls.Add(Me.AcceptButton, 0, 1)
+        Me.AcceptReturnTableLayoutPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AcceptReturnTableLayoutPanel.Location = New System.Drawing.Point(476, 3)
+        Me.AcceptReturnTableLayoutPanel.Name = "AcceptReturnTableLayoutPanel"
+        Me.AcceptReturnTableLayoutPanel.RowCount = 2
+        Me.AcceptReturnTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.AcceptReturnTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.0!))
+        Me.AcceptReturnTableLayoutPanel.Size = New System.Drawing.Size(200, 280)
+        Me.AcceptReturnTableLayoutPanel.TabIndex = 4
         '
         'ReturnButton
         '
@@ -360,27 +342,69 @@ Partial Class CashRegisterPanel
         Me.AcceptButton.Text = "Button15"
         Me.AcceptButton.UseVisualStyleBackColor = True
         '
+        'MainTableLayoutPanel
+        '
+        Me.MainTableLayoutPanel.AutoSize = True
+        Me.MainTableLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.MainTableLayoutPanel.ColumnCount = 5
+        Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10.0!))
+        Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.MainTableLayoutPanel.Controls.Add(Me.TextBoxTableLayoutPanel, 0, 0)
+        Me.MainTableLayoutPanel.Controls.Add(Me.AcceptReturnTableLayoutPanel, 4, 0)
+        Me.MainTableLayoutPanel.Controls.Add(Me.NumeralTableLayoutPanel, 2, 0)
+        Me.MainTableLayoutPanel.Controls.Add(Me.BillTableLayoutPanel, 1, 0)
+        Me.MainTableLayoutPanel.Location = New System.Drawing.Point(3, 3)
+        Me.MainTableLayoutPanel.Name = "MainTableLayoutPanel"
+        Me.MainTableLayoutPanel.RowCount = 1
+        Me.MainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.MainTableLayoutPanel.Size = New System.Drawing.Size(679, 286)
+        Me.MainTableLayoutPanel.TabIndex = 1
+        '
+        'TextBoxTableLayoutPanel
+        '
+        Me.TextBoxTableLayoutPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.TextBoxTableLayoutPanel.AutoScroll = True
+        Me.TextBoxTableLayoutPanel.AutoSize = True
+        Me.TextBoxTableLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.TextBoxTableLayoutPanel.ColumnCount = 1
+        Me.TextBoxTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TextBoxTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TextBoxTableLayoutPanel.Controls.Add(Me.MoneyOutTextBox, 0, 1)
+        Me.TextBoxTableLayoutPanel.Controls.Add(Me.MoneyInTextBox, 0, 0)
+        Me.TextBoxTableLayoutPanel.Location = New System.Drawing.Point(3, 3)
+        Me.TextBoxTableLayoutPanel.Name = "TextBoxTableLayoutPanel"
+        Me.TextBoxTableLayoutPanel.RowCount = 2
+        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TextBoxTableLayoutPanel.Size = New System.Drawing.Size(106, 280)
+        Me.TextBoxTableLayoutPanel.TabIndex = 0
+        '
         'CashRegisterPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Controls.Add(Me.MainTableLayoutPanel)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "CashRegisterPanel"
-        Me.Size = New System.Drawing.Size(835, 333)
-        Me.FlowLayoutPanel1.ResumeLayout(False)
-        Me.FlowLayoutPanel2.ResumeLayout(False)
-        Me.FlowLayoutPanel2.PerformLayout()
+        Me.Size = New System.Drawing.Size(685, 292)
         Me.BillTableLayoutPanel.ResumeLayout(False)
         Me.NumeralTableLayoutPanel.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.AcceptReturnTableLayoutPanel.ResumeLayout(False)
+        Me.MainTableLayoutPanel.ResumeLayout(False)
+        Me.MainTableLayoutPanel.PerformLayout()
+        Me.TextBoxTableLayoutPanel.ResumeLayout(False)
+        Me.TextBoxTableLayoutPanel.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents MoneyInTextBox As TextBox
+    Friend WithEvents MoneyOutTextBox As TextBox
     Friend WithEvents Euro5Button As Button
     Friend WithEvents Euro10Button As Button
     Friend WithEvents Euro20Button As Button
@@ -401,7 +425,9 @@ Partial Class CashRegisterPanel
     Friend WithEvents NumDotButton As Button
     Friend WithEvents NumClearButton As Button
     Friend WithEvents BillTableLayoutPanel As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents AcceptReturnTableLayoutPanel As TableLayoutPanel
     Friend WithEvents ReturnButton As Button
     Friend WithEvents AcceptButton As Button
+    Friend WithEvents MainTableLayoutPanel As TableLayoutPanel
+    Friend WithEvents TextBoxTableLayoutPanel As TableLayoutPanel
 End Class

@@ -15,7 +15,7 @@ namespace Kassensystem_Logic.Billing {
     class Bill {
         public List<BillEntry> entries;
 
-        public void AddEntry(meal m, int FullMealCoutn, int HalfMealCount) {
+        public void AddEntry(Meal m, int FullMealCoutn, int HalfMealCount) {
 
         }
     }

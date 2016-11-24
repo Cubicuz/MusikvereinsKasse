@@ -84,6 +84,12 @@
     <Compile Include="DiningPlan\MealControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="DiningPlan\MealGroupPanel.Designer.vb">
+      <DependentUpon>MealGroupPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DiningPlan\MealGroupPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="MainWindow.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DiningPlan\MealControl.resx">
       <DependentUpon>MealControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiningPlan\MealGroupPanel.resx">
+      <DependentUpon>MealGroupPanel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.vb</DependentUpon>

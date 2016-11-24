@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace Kassensystem_Logic.Dining {
     public class DiningPlan {
-        private List<meal> MealList;
-
-        void AddMeal(meal m) {
-            MealList.Add(m);
+        public MealGroup [] Groups;
+        
+        public DiningPlan(MealGroup [] g) {
+            Groups = g;
         }
 
-
-        void AddMeal(int index,  meal m) {
-            MealList.Insert(index, m);
-        }
+        
     }
 }

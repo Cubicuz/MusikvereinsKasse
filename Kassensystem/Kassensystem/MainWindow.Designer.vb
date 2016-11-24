@@ -32,6 +32,7 @@ Partial Class MainWindow
         Me.LadenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditierenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditierenToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -54,24 +55,24 @@ Partial Class MainWindow
         'ÖffnenToolStripMenuItem
         '
         Me.ÖffnenToolStripMenuItem.Name = "ÖffnenToolStripMenuItem"
-        Me.ÖffnenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ÖffnenToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.ÖffnenToolStripMenuItem.Text = "Öffnen"
         '
         'SpeichernToolStripMenuItem
         '
         Me.SpeichernToolStripMenuItem.Name = "SpeichernToolStripMenuItem"
-        Me.SpeichernToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SpeichernToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.SpeichernToolStripMenuItem.Text = "Speichern"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(123, 6)
         '
         'BeendenToolStripMenuItem
         '
         Me.BeendenToolStripMenuItem.Name = "BeendenToolStripMenuItem"
-        Me.BeendenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BeendenToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.BeendenToolStripMenuItem.Text = "Beenden"
         '
         'MenüplanToolStripMenuItem
@@ -84,26 +85,36 @@ Partial Class MainWindow
         'LadenToolStripMenuItem
         '
         Me.LadenToolStripMenuItem.Name = "LadenToolStripMenuItem"
-        Me.LadenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LadenToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.LadenToolStripMenuItem.Text = "Laden"
         '
         'EditierenToolStripMenuItem
         '
         Me.EditierenToolStripMenuItem.Name = "EditierenToolStripMenuItem"
-        Me.EditierenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EditierenToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.EditierenToolStripMenuItem.Text = "Speichern"
         '
         'EditierenToolStripMenuItem1
         '
         Me.EditierenToolStripMenuItem1.Name = "EditierenToolStripMenuItem1"
-        Me.EditierenToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.EditierenToolStripMenuItem1.Size = New System.Drawing.Size(126, 22)
         Me.EditierenToolStripMenuItem1.Text = "Editieren"
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 24)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(814, 415)
+        Me.FlowLayoutPanel1.TabIndex = 2
         '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(814, 439)
+        Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainWindow"
@@ -125,4 +136,5 @@ Partial Class MainWindow
     Friend WithEvents LadenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditierenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditierenToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
 End Class

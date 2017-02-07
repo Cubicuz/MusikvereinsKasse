@@ -10,6 +10,9 @@ using System.Xml.Linq;
 namespace Kassensystem_Logic.Saving {
     public class FileIO {
 
+        public static string DiningPlanPath;
+        public static string OrderPath;
+
         public static MealGroup [] loadMealGroup(string filePath) {
             XDocument doc = XDocument.Load(filePath);
             List<MealGroup> outMealList = new List<MealGroup>();
@@ -35,6 +38,13 @@ namespace Kassensystem_Logic.Saving {
         }
 
         public static void saveDiningPlan(string filePath, DiningPlan d) {
+
+        }
+
+        /// <summary>
+        /// this is just a human readable storage, not meant to be loaded again
+        /// </summary>
+        public static void saveOrder(DiningPlan d) {
 
         }
     }

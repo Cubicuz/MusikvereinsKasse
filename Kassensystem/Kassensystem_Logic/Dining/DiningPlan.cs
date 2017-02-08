@@ -35,17 +35,22 @@ namespace Kassensystem_Logic.Dining {
             }
         }
 
-        public void payOrder() {
-            Saving.FileIO.saveOrder(this);
-            resetOrder();
+        public void PayOrder() {
+            foreach (var mg in Groups)
+            {
+                foreach (var m in mg.Meals)
+                {
+                    m.PayOrder();
+                }
+            }
         }
 
-        public void onMealAmountChanged(Meal sender, int diffAmount) {
+        private void onMealAmountChanged(Meal sender, int diffAmount) {
             Price += diffAmount * sender.Price;
             priceChanged(Price);
         }
 
-        public void onMealHalfAmountChanged(Meal sender, int diffAmount) {
+        private void onMealHalfAmountChanged(Meal sender, int diffAmount) {
             Price += diffAmount * sender.HalfPrice;
             priceChanged(Price);
         }

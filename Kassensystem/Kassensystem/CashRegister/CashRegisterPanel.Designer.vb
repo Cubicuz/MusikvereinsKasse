@@ -64,6 +64,8 @@ Partial Class CashRegisterPanel
         Me.MoneyInTextBox.Name = "MoneyInTextBox"
         Me.MoneyInTextBox.Size = New System.Drawing.Size(100, 20)
         Me.MoneyInTextBox.TabIndex = 0
+        Me.MoneyInTextBox.Text = "0"
+        Me.MoneyInTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'MoneyOutTextBox
         '
@@ -71,6 +73,8 @@ Partial Class CashRegisterPanel
         Me.MoneyOutTextBox.Name = "MoneyOutTextBox"
         Me.MoneyOutTextBox.Size = New System.Drawing.Size(100, 20)
         Me.MoneyOutTextBox.TabIndex = 1
+        Me.MoneyOutTextBox.Text = "0"
+        Me.MoneyOutTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BillTableLayoutPanel
         '
@@ -331,18 +335,19 @@ Partial Class CashRegisterPanel
         Me.ReturnButton.Name = "ReturnButton"
         Me.ReturnButton.Size = New System.Drawing.Size(194, 64)
         Me.ReturnButton.TabIndex = 0
-        Me.ReturnButton.Text = "Button14"
+        Me.ReturnButton.Text = "Löschen"
         Me.ReturnButton.UseVisualStyleBackColor = False
         '
         'AcceptButton
         '
+        Me.AcceptButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.AcceptButton.Dock = System.Windows.Forms.DockStyle.Fill
         Me.AcceptButton.Location = New System.Drawing.Point(3, 73)
         Me.AcceptButton.Name = "AcceptButton"
         Me.AcceptButton.Size = New System.Drawing.Size(194, 204)
         Me.AcceptButton.TabIndex = 1
-        Me.AcceptButton.Text = "Button15"
-        Me.AcceptButton.UseVisualStyleBackColor = True
+        Me.AcceptButton.Text = "Bezahlt"
+        Me.AcceptButton.UseVisualStyleBackColor = False
         '
         'MainTableLayoutPanel
         '

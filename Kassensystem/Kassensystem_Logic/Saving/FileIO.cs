@@ -13,14 +13,15 @@ namespace Kassensystem_Logic.Saving {
         public static string DiningPlanPath;
         public static string OrderPath;
 
-        public static MealGroup [] loadMealGroup(string filePath) {
+        public static MealGroup [] LoadDiningPlan(string filePath) {
             XDocument doc = XDocument.Load(filePath);
             List<MealGroup> outMealList = new List<MealGroup>();
-            Int32 id = 0;
+
             foreach (XElement groupNode in doc.Descendants("group")) {
                 List<Meal> groupList = new List<Meal>();
                 foreach (XElement mealNode in groupNode.Descendants("meal")){
                     Console.WriteLine(mealNode.Attribute("id").Value);
+                    int id = Convert.ToInt32(mealNode.Descendants("id").First().Value);
                     decimal price = Convert.ToDecimal( mealNode.Descendants("price").First().Value);
                     decimal halfPrice;
                     if (mealNode.Descendants("halfPrice").Any()) {
@@ -28,7 +29,7 @@ namespace Kassensystem_Logic.Saving {
                     } else {
                         halfPrice = 0;
                     }
-                    string name = mealNode.Attribute("id").Value;
+                    string name = mealNode.Attribute("name").Value;
                     groupList.Add(new Meal(id, name, price, halfPrice));
                     id++;
                 }

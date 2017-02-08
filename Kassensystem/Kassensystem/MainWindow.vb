@@ -1,11 +1,16 @@
 ﻿Imports Kassensystem_Logic.Saving
 Imports Kassensystem_Logic.Dining
+Imports Microsoft.VisualBasic.FileIO
 
 Public Class MainWindow
+
+    Private isSessionOpen As Boolean = False
+
     Public Sub New()
 
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
+
         Dim m As MealControl = New MealControl(New Meal(1, "aslkdjf", 1.5, 0))
         m.BackColor = Color.Red
         m.Anchor = AnchorStyles.Left And AnchorStyles.Right
@@ -20,5 +25,20 @@ Public Class MainWindow
 
 
         'FileIO.loadDiningPlan("C:\Users\PegaMenis\ownCloud\Musikverein\Kassensystem\exampleDiningPlan.xml")
+    End Sub
+
+    Private Sub ÖffnenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ÖffnenToolStripMenuItem.Click
+        If isSessionOpen Then
+            'TODO: ask to save Session
+        End If
+        Dim fd As OpenFileDialog = New OpenFileDialog()
+        fd.Title = "Kasse öffnen"
+        fd.InitialDirectory = SpecialDirectories.Desktop
+        fd.Filter = "All files (*.*)|*.*|All files (*.*)|*.*"
+        fd.FilterIndex = 2
+        fd.RestoreDirectory = True
+        If fd.ShowDialog() = DialogResult.OK Then
+            FileIO.LoadDiningPlan(fd.FileName)
+        End If
     End Sub
 End Class

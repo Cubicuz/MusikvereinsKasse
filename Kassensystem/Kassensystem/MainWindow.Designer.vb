@@ -33,7 +33,9 @@ Partial Class MainWindow
         Me.EditierenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditierenToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.CashRegisterPanel1 = New Kassensystem.CashRegisterPanel()
         Me.MenuStrip1.SuspendLayout()
+        Me.FlowLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -55,24 +57,24 @@ Partial Class MainWindow
         'ÖffnenToolStripMenuItem
         '
         Me.ÖffnenToolStripMenuItem.Name = "ÖffnenToolStripMenuItem"
-        Me.ÖffnenToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.ÖffnenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ÖffnenToolStripMenuItem.Text = "Öffnen"
         '
         'SpeichernToolStripMenuItem
         '
         Me.SpeichernToolStripMenuItem.Name = "SpeichernToolStripMenuItem"
-        Me.SpeichernToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.SpeichernToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.SpeichernToolStripMenuItem.Text = "Speichern"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(123, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
         '
         'BeendenToolStripMenuItem
         '
         Me.BeendenToolStripMenuItem.Name = "BeendenToolStripMenuItem"
-        Me.BeendenToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.BeendenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BeendenToolStripMenuItem.Text = "Beenden"
         '
         'MenüplanToolStripMenuItem
@@ -102,12 +104,23 @@ Partial Class MainWindow
         '
         'FlowLayoutPanel1
         '
+        Me.FlowLayoutPanel1.Controls.Add(Me.CashRegisterPanel1)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 24)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(814, 415)
         Me.FlowLayoutPanel1.TabIndex = 2
+        '
+        'CashRegisterPanel1
+        '
+        Me.CashRegisterPanel1.AutoSize = True
+        Me.CashRegisterPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.CashRegisterPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CashRegisterPanel1.Location = New System.Drawing.Point(3, 3)
+        Me.CashRegisterPanel1.Name = "CashRegisterPanel1"
+        Me.CashRegisterPanel1.Size = New System.Drawing.Size(685, 292)
+        Me.CashRegisterPanel1.TabIndex = 0
         '
         'MainWindow
         '
@@ -121,6 +134,8 @@ Partial Class MainWindow
         Me.Text = "Kassensystem"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.FlowLayoutPanel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -137,4 +152,5 @@ Partial Class MainWindow
     Friend WithEvents EditierenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditierenToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents CashRegisterPanel1 As CashRegisterPanel
 End Class

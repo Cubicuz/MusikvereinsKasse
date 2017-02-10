@@ -6,6 +6,13 @@ Public Class MainWindow
 
     Private isSessionOpen As Boolean = False
 
+    Public Shared DiningPlanInstance As DiningPlan = Nothing
+
+#Region "---------- Events ----------"
+
+    Public Shared Event DiningPlanInstanceChanged(ByRef diningPlan As DiningPlan)
+
+#End Region
     Public Sub New()
 
         ' Dieser Aufruf ist für den Designer erforderlich.

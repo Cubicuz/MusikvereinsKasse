@@ -76,7 +76,9 @@ Public Class CashRegisterPanel
     End Sub
 
     Private Sub NumDotButton_Click(sender As Object, e As EventArgs) Handles NumDotButton.Click
-        MoneyInTextBox.AppendText(",")
+        If Not MoneyInTextBox.Text.Contains(",") Then
+            MoneyInTextBox.AppendText(",")
+        End If
     End Sub
 
     Private Sub NumDelButton_Click(sender As Object, e As EventArgs) Handles NumDelButton.Click
@@ -92,7 +94,7 @@ Public Class CashRegisterPanel
 #End Region
 
 #End Region
-
+#Region "---------- MoneyTextBox ----------"
     Private Sub MoneyInTextBox_TextChanged(sender As Object, e As EventArgs) Handles MoneyInTextBox.TextChanged
         Dim res As Decimal
         If MoneyInTextBox.Text = "0" Then
@@ -107,8 +109,21 @@ Public Class CashRegisterPanel
                 MoneyInTextBox.Text = MoneyInTextBox.Text.TrimStart("0"c)
             End If
         Else
-                MoneyInTextBox.Text = "0"
+            MoneyInTextBox.Text = "0"
             'TODO: Fehlermeldung
         End If
+        MoneyOutTextBox_ChangeText()
     End Sub
+
+    Private Sub MoneyOutTextBox_ChangeText()
+        If MainWindow.DiningPlanInstance Is Nothing Then
+            MoneyOutTextBox.Text = "---"
+        Else
+            Dim moneyIn As Decimal
+            Decimal.TryParse(MoneyInTextBox.Text, moneyIn)
+            MoneyOutTextBox.Text = (moneyIn - MainWindow.DiningPlanInstance.Price)
+        End If
+    End Sub
+#End Region
+
 End Class

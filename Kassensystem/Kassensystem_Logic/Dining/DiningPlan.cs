@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Kassensystem_Logic.Dining {
     public class DiningPlan {
 
-        #region "--- Events ---"
+        #region "---------- Events ----------"
         public delegate void priceChangedHandler(decimal newPrice);
 
         public event priceChangedHandler priceChanged;

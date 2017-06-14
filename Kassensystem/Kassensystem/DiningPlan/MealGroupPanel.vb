@@ -2,8 +2,8 @@
 
 Public Class MealGroupPanel
 
-    Private DPlan As DiningPlan
-    Public MealControlList As List(Of MealControl)
+    Private _DPlan As DiningPlan
+    Friend MealControlList As List(Of MealControl)
 
     Public Sub New()
 
@@ -15,21 +15,32 @@ Public Class MealGroupPanel
     End Sub
 
     Public Sub New(DPlan As DiningPlan)
-        Me.DPlan = DPlan
+
+        _DPlan = DPlan
         Me.MealControlList = New List(Of MealControl)
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
         For Each mg As MealGroup In DPlan.Groups
-            For Each m As Meal In mg.meals
-                Dim mealC As MealControl = New MealControl()
+            For Each m As Meal In mg.Meals
+                Dim mealC As MealControl = New MealControl(m)
                 mealC.BackColor = mg.BgColor
+                MealOrganizerFlowLayoutPanel.Controls.Add(mealC)
+                Me.MealControlList.Add(mealC)
             Next
         Next
-        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
 
     End Sub
 
-    Public Sub AddMeal(m As Meal)
+    Public Sub DPlan(ByRef value As DiningPlan)
 
+    End Sub
+    Public Function DPlan() As DiningPlan
+        Return _DPlan
+    End Function
+
+    Public Sub AddMeal(m As Meal)
+        Dim mealC As MealControl = New MealControl(m)
+        MealOrganizerFlowLayoutPanel.Controls.Add(mealC)
+        Me.MealControlList.Add(mealC)
     End Sub
 End Class

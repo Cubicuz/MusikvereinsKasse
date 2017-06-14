@@ -13,7 +13,7 @@ namespace Kassensystem_Logic.Dining
         public delegate void amountChangedHandler(Meal sender, int diffAmount);
         public delegate void amountHalfPricedHandler(Meal sender, int diffAmountHalfPriced);
         public event amountChangedHandler amountChanged;
-        public event amountHalfPricedHandler amountHalfPricedChanged;
+        public event amountHalfPricedHandler amountHalfPriceChanged;
         #endregion
         #region " --- Properties ---"
         public int ID { get; set; }
@@ -30,29 +30,35 @@ namespace Kassensystem_Logic.Dining
             }
             set
             {
-                if (amount != value)
+                if (amount != value && amount >= 0)
                 {
                     int diff = value - amount;
                     amount = value;
-                    amountChanged(this, diff);
+                    if (amountChanged != null)
+                    {
+                        amountChanged(this, diff);
+                    }
                 }
             }
         }
 
-        private int amountHalfPriced;
-        public int AmountHalfPriced
+        private int amountHalfPrice;
+        public int AmountHalfPrice
         {
             get
             {
-                return amountHalfPriced;
+                return amountHalfPrice;
             }
             set
             {
-                if (amountHalfPriced != value)
+                if (amountHalfPrice != value)
                 {
-                    int diff = value - amountHalfPriced;
-                    amountHalfPriced = value;
-                    amountHalfPricedChanged(this, diff);
+                    int diff = value - amountHalfPrice;
+                    amountHalfPrice = value;
+                    if (amountHalfPriceChanged != null)
+                    {
+                        amountHalfPriceChanged(this, diff);
+                    }
                 }
             }
         }
@@ -67,7 +73,7 @@ namespace Kassensystem_Logic.Dining
         }
 
         private int totalHalfAmount;
-        public int TotalHalfAmount
+        public int TotalAmountHalfPrice
         {
             get
             {
@@ -89,8 +95,8 @@ namespace Kassensystem_Logic.Dining
         {
             totalAmount += amount;
             Amount = 0;
-            totalHalfAmount += amountHalfPriced;
-            AmountHalfPriced = 0;
+            totalHalfAmount += amountHalfPrice;
+            AmountHalfPrice = 0;
         }
     }
 }

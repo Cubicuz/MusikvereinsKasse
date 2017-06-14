@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class MealGroupPanel
+Partial Class CurrentOrderPanel
     Inherits System.Windows.Forms.UserControl
 
     'UserControl überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
@@ -22,36 +22,37 @@ Partial Class MealGroupPanel
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MealOrganizerFlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.SuspendLayout()
         '
-        'MealOrganizerFlowLayoutPanel
+        'FlowLayoutPanel1
         '
-        Me.MealOrganizerFlowLayoutPanel.AutoScroll = True
-        Me.MealOrganizerFlowLayoutPanel.AutoSize = True
-        Me.MealOrganizerFlowLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MealOrganizerFlowLayoutPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.MealOrganizerFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MealOrganizerFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.MealOrganizerFlowLayoutPanel.Location = New System.Drawing.Point(0, 0)
-        Me.MealOrganizerFlowLayoutPanel.Name = "MealOrganizerFlowLayoutPanel"
-        Me.MealOrganizerFlowLayoutPanel.Size = New System.Drawing.Size(200, 300)
-        Me.MealOrganizerFlowLayoutPanel.TabIndex = 0
+        Me.FlowLayoutPanel1.AutoScroll = True
+        Me.FlowLayoutPanel1.AutoSize = True
+        Me.FlowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(200, 300)
+        Me.FlowLayoutPanel1.TabIndex = 0
+        Me.FlowLayoutPanel1.WrapContents = False
         '
-        'MealGroupPanel
+        'CurrentOrderPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Controls.Add(Me.MealOrganizerFlowLayoutPanel)
+        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.MinimumSize = New System.Drawing.Size(200, 300)
-        Me.Name = "MealGroupPanel"
+        Me.Name = "CurrentOrderPanel"
         Me.Size = New System.Drawing.Size(200, 300)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents MealOrganizerFlowLayoutPanel As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
 End Class

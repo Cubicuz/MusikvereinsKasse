@@ -23,8 +23,8 @@ Partial Class MealControl
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.MainTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
-        Me.PriceTextBox = New System.Windows.Forms.TextBox()
         Me.NameLabel = New System.Windows.Forms.Label()
+        Me.PriceTextBox = New System.Windows.Forms.TextBox()
         Me.FullMealTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.FullMealComboBox = New System.Windows.Forms.ComboBox()
         Me.FullMealUpButton = New System.Windows.Forms.Button()
@@ -47,16 +47,29 @@ Partial Class MealControl
         Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.MainTableLayoutPanel.Controls.Add(Me.PriceTextBox, 3, 0)
+        Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.MainTableLayoutPanel.Controls.Add(Me.NameLabel, 0, 0)
-        Me.MainTableLayoutPanel.Controls.Add(Me.FullMealTableLayoutPanel, 1, 0)
+        Me.MainTableLayoutPanel.Controls.Add(Me.PriceTextBox, 3, 0)
         Me.MainTableLayoutPanel.Controls.Add(Me.HalfMealTableLayoutPanel, 2, 0)
+        Me.MainTableLayoutPanel.Controls.Add(Me.FullMealTableLayoutPanel, 1, 0)
         Me.MainTableLayoutPanel.Location = New System.Drawing.Point(3, 3)
+        Me.MainTableLayoutPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.MainTableLayoutPanel.Name = "MainTableLayoutPanel"
         Me.MainTableLayoutPanel.RowCount = 1
         Me.MainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.MainTableLayoutPanel.Size = New System.Drawing.Size(338, 79)
         Me.MainTableLayoutPanel.TabIndex = 0
+        '
+        'NameLabel
+        '
+        Me.NameLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.NameLabel.AutoSize = True
+        Me.NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameLabel.Location = New System.Drawing.Point(71, 29)
+        Me.NameLabel.Name = "NameLabel"
+        Me.NameLabel.Size = New System.Drawing.Size(57, 20)
+        Me.NameLabel.TabIndex = 3
+        Me.NameLabel.Text = "Label1"
         '
         'PriceTextBox
         '
@@ -69,16 +82,6 @@ Partial Class MealControl
         Me.PriceTextBox.TabIndex = 1
         Me.PriceTextBox.TabStop = False
         Me.PriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'NameLabel
-        '
-        Me.NameLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.NameLabel.AutoSize = True
-        Me.NameLabel.Location = New System.Drawing.Point(80, 33)
-        Me.NameLabel.Name = "NameLabel"
-        Me.NameLabel.Size = New System.Drawing.Size(39, 13)
-        Me.NameLabel.TabIndex = 3
-        Me.NameLabel.Text = "Label1"
         '
         'FullMealTableLayoutPanel
         '
@@ -196,7 +199,7 @@ Partial Class MealControl
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Controls.Add(Me.MainTableLayoutPanel)
         Me.Name = "MealControl"
-        Me.Size = New System.Drawing.Size(344, 85)
+        Me.Size = New System.Drawing.Size(341, 82)
         Me.MainTableLayoutPanel.ResumeLayout(False)
         Me.MainTableLayoutPanel.PerformLayout()
         Me.FullMealTableLayoutPanel.ResumeLayout(False)

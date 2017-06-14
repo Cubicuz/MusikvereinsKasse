@@ -6,31 +6,20 @@ Public Class MainWindow
 
     Private isSessionOpen As Boolean = False
 
-    Public Shared DiningPlanInstance As DiningPlan = Nothing
 
-#Region "---------- Events ----------"
-
-    Public Shared Event DiningPlanInstanceChanged(ByRef diningPlan As DiningPlan)
-
-#End Region
     Public Sub New()
 
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
-
-        Dim m As MealControl = New MealControl(New Meal(1, "aslkdjf", 1.5, 0))
-        m.BackColor = Color.Red
-        m.Anchor = AnchorStyles.Left And AnchorStyles.Right
-        FlowLayoutPanel1.Controls.Add(m)
-
-
-        m = New MealControl(New Meal(1, "aslkdjf", 1.5, 5))
-        m.BackColor = Color.Blue
-        m.Anchor = AnchorStyles.Left And AnchorStyles.Right
-
-        FlowLayoutPanel1.Controls.Add(m)
-
-
+        Dim M() As Meal = {New Meal(1, "Maultaschen", 5.0, 2.8), New Meal(2, "Bratwurst", 4.3, 0), New Meal(3, "Salzfleisch", 4.7, 3.0)}
+        Dim MG() As MealGroup = {New MealGroup(M, "Group1", Color.Aqua)}
+        Dim DNP As DiningPlan = FileIO.LoadDiningPlan("C:\Users\michi\Desktop\exampleDiningPlan.xml") 'New DiningPlan(MG)
+        DiningPlan.DiningPlanInstance = DNP
+        Dim MGP As MealGroupPanel = New MealGroupPanel(DNP)
+        'Dim MC As MealControl = New MealControl(M(0))
+        TableLayoutPanel1.Controls.Add(MGP, 0, 0)
+        MGP.Dock = DockStyle.Fill
+        CurrentOrderPanel1.InitializeCurrentOrderPanel(DNP)
         'FileIO.loadDiningPlan("C:\Users\PegaMenis\ownCloud\Musikverein\Kassensystem\exampleDiningPlan.xml")
     End Sub
 
@@ -45,7 +34,7 @@ Public Class MainWindow
         fd.FilterIndex = 2
         fd.RestoreDirectory = True
         If fd.ShowDialog() = DialogResult.OK Then
-            FileIO.LoadDiningPlan(fd.FileName)
+            DiningPlan.DiningPlanInstance = FileIO.LoadDiningPlan(fd.FileName)
         End If
     End Sub
 End Class

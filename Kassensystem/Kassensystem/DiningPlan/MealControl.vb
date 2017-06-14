@@ -41,8 +41,9 @@ Public Class MealControl
         If m.HalfPrice = 0 Then
             HalfMealTableLayoutPanel.Enabled = False
         End If
-        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
 
+        AddHandler MyMeal.amountChanged, AddressOf HandleMealAmountChanged
+        AddHandler MyMeal.amountHalfPriceChanged, AddressOf HandleMealAmountHalfPriceChanged
     End Sub
 
     Private Sub FullMealComboBox_TextChanged(sender As Object, e As EventArgs) Handles FullMealComboBox.TextChanged
@@ -52,20 +53,53 @@ Public Class MealControl
 
 #Region "---------- ButtonHandler ----------"
     Private Sub FullMealDownButton_Click(sender As Object, e As EventArgs) Handles FullMealDownButton.Click
-
+        MyMeal.Amount -= 1
     End Sub
 
     Private Sub FullMealUpButton_Click(sender As Object, e As EventArgs) Handles FullMealUpButton.Click
-
+        MyMeal.Amount += 1
     End Sub
 
     Private Sub HalfMealDownButton_Click(sender As Object, e As EventArgs) Handles HalfMealDownButton.Click
-
+        MyMeal.AmountHalfPrice -= 1
     End Sub
 
     Private Sub HalfMealUpButton_Click(sender As Object, e As EventArgs) Handles HalfMealUpButton.Click
-
+        MyMeal.AmountHalfPrice += 1
     End Sub
 
+#End Region
+#Region "---------- ComboboxHandler ----------"
+    Private Sub HandleFullMealSelectionChanged(sender As Object, e As EventArgs) Handles FullMealComboBox.TextChanged
+        If Not FullMealComboBox.Text.Equals(MyMeal.Amount) Then
+            MyMeal.Amount = Integer.Parse(FullMealComboBox.Text)
+        End If
+    End Sub
+
+    Private Sub HandleHalfMealSelectionChanged(sender As Object, e As EventArgs) Handles HalfMealComboBox.TextChanged
+        If Not HalfMealComboBox.Text.Equals(MyMeal.AmountHalfPrice) Then
+            MyMeal.AmountHalfPrice = Integer.Parse(HalfMealComboBox.Text)
+        End If
+    End Sub
+#End Region
+#Region "---------- MealHandler ----------"
+
+    Private Sub HandleMealAmountChanged(sender As Meal, diff As Integer)
+        If Not Me.FullMealComboBox.Text.Equals(MyMeal.Amount.ToString) Then
+            Me.FullMealComboBox.Text = MyMeal.Amount
+        End If
+        UpdatePrice()
+    End Sub
+
+    Private Sub HandleMealAmountHalfPriceChanged(sender As Meal, diff As Integer)
+        If Not Me.HalfMealComboBox.Text.Equals(MyMeal.AmountHalfPrice.ToString) Then
+            Me.HalfMealComboBox.Text = MyMeal.AmountHalfPrice
+        End If
+        UpdatePrice()
+    End Sub
+
+    Private Sub UpdatePrice()
+        PriceTextBox.Text = (MyMeal.Price * MyMeal.Amount + MyMeal.HalfPrice * MyMeal.AmountHalfPrice).ToString("C")
+    End Sub
 #End Region
 End Class

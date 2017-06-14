@@ -13,15 +13,16 @@ namespace Kassensystem_Logic.Saving {
         public static string DiningPlanPath;
         public static string OrderPath;
 
-        public static MealGroup [] LoadDiningPlan(string filePath) {
+        public static DiningPlan LoadDiningPlan(string filePath) {
             XDocument doc = XDocument.Load(filePath);
             List<MealGroup> outMealList = new List<MealGroup>();
 
             foreach (XElement groupNode in doc.Descendants("group")) {
+                int id = 0;
                 List<Meal> groupList = new List<Meal>();
                 foreach (XElement mealNode in groupNode.Descendants("meal")){
-                    Console.WriteLine(mealNode.Attribute("id").Value);
-                    int id = Convert.ToInt32(mealNode.Descendants("id").First().Value);
+                    Console.WriteLine(mealNode.Attribute("name").Value);
+                    string name = mealNode.Attribute("name").Value;
                     decimal price = Convert.ToDecimal( mealNode.Descendants("price").First().Value);
                     decimal halfPrice;
                     if (mealNode.Descendants("halfPrice").Any()) {
@@ -29,13 +30,13 @@ namespace Kassensystem_Logic.Saving {
                     } else {
                         halfPrice = 0;
                     }
-                    string name = mealNode.Attribute("name").Value;
                     groupList.Add(new Meal(id, name, price, halfPrice));
                     id++;
                 }
                 outMealList.Add(new MealGroup(groupList.ToArray(), groupNode.Attribute("name").Value, groupNode.Attribute("color").Value));
             }
-            return outMealList.ToArray();
+            DiningPlan dp = new DiningPlan(outMealList.ToArray());
+            return dp;
         }
 
         public static void saveDiningPlan(string filePath, DiningPlan d) {

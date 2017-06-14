@@ -1,8 +1,21 @@
 ﻿Imports System.ComponentModel
+Imports Kassensystem_Logic.Dining
 
 Public Class CashRegisterPanel
+    Public Sub New()
 
+        ' Dieser Aufruf ist für den Designer erforderlich.
+        InitializeComponent()
 
+        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
+        AddHandler DiningPlan.DiningPlanInstanceChanged, AddressOf DiningPlanChanged
+    End Sub
+
+    Public Sub DiningPlanChanged()
+        AddHandler DiningPlan.DiningPlanInstance.priceChanged, Sub(newPrice As Decimal)
+                                                                   PriceTextBox.Text = newPrice.ToString("C")
+                                                               End Sub
+    End Sub
 
 #Region "---------- ButtonHandler ----------"
 #Region "---------- EuroButtonHandler ----------"
@@ -92,7 +105,20 @@ Public Class CashRegisterPanel
 
 
 #End Region
+#Region "---------- OtherHandler ----------"
+    Private Sub AcceptButton_Click(sender As Object, e As EventArgs) Handles AcceptButton.Click
+        DiningPlan.DiningPlanInstance.PayOrder()
+        MoneyInTextBox.Text = "0"
+        MoneyOutTextBox_ChangeText()
+    End Sub
 
+    Private Sub ReturnButton_Click(sender As Object, e As EventArgs) Handles ReturnButton.Click
+        DiningPlan.DiningPlanInstance.resetOrder()
+        MoneyInTextBox.Text = "0"
+        MoneyOutTextBox_ChangeText()
+    End Sub
+
+#End Region
 #End Region
 #Region "---------- MoneyTextBox ----------"
     Private Sub MoneyInTextBox_TextChanged(sender As Object, e As EventArgs) Handles MoneyInTextBox.TextChanged
@@ -116,14 +142,15 @@ Public Class CashRegisterPanel
     End Sub
 
     Private Sub MoneyOutTextBox_ChangeText()
-        If MainWindow.DiningPlanInstance Is Nothing Then
+        If DiningPlan.DiningPlanInstance Is Nothing Then
             MoneyOutTextBox.Text = "---"
         Else
             Dim moneyIn As Decimal
             Decimal.TryParse(MoneyInTextBox.Text, moneyIn)
-            MoneyOutTextBox.Text = (moneyIn - MainWindow.DiningPlanInstance.Price)
+            MoneyOutTextBox.Text = (moneyIn - DiningPlan.DiningPlanInstance.Price).ToString("C")
         End If
     End Sub
+
 #End Region
 
 End Class

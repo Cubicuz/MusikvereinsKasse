@@ -49,8 +49,10 @@ Partial Class CashRegisterPanel
         Me.AcceptButton = New System.Windows.Forms.Button()
         Me.MainTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.TextBoxTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LabelRueck = New System.Windows.Forms.Label()
+        Me.LabelGegeben = New System.Windows.Forms.Label()
+        Me.LabelPreis = New System.Windows.Forms.Label()
+        Me.PriceTextBox = New System.Windows.Forms.TextBox()
         Me.BillTableLayoutPanel.SuspendLayout()
         Me.NumeralTableLayoutPanel.SuspendLayout()
         Me.AcceptReturnTableLayoutPanel.SuspendLayout()
@@ -60,7 +62,7 @@ Partial Class CashRegisterPanel
         '
         'MoneyInTextBox
         '
-        Me.MoneyInTextBox.Location = New System.Drawing.Point(3, 73)
+        Me.MoneyInTextBox.Location = New System.Drawing.Point(3, 49)
         Me.MoneyInTextBox.Name = "MoneyInTextBox"
         Me.MoneyInTextBox.Size = New System.Drawing.Size(100, 20)
         Me.MoneyInTextBox.TabIndex = 0
@@ -69,7 +71,7 @@ Partial Class CashRegisterPanel
         '
         'MoneyOutTextBox
         '
-        Me.MoneyOutTextBox.Location = New System.Drawing.Point(3, 213)
+        Me.MoneyOutTextBox.Location = New System.Drawing.Point(3, 233)
         Me.MoneyOutTextBox.Name = "MoneyOutTextBox"
         Me.MoneyOutTextBox.Size = New System.Drawing.Size(100, 20)
         Me.MoneyOutTextBox.TabIndex = 1
@@ -335,7 +337,7 @@ Partial Class CashRegisterPanel
         Me.ReturnButton.Name = "ReturnButton"
         Me.ReturnButton.Size = New System.Drawing.Size(194, 64)
         Me.ReturnButton.TabIndex = 0
-        Me.ReturnButton.Text = "Löschen"
+        Me.ReturnButton.Text = "löschen"
         Me.ReturnButton.UseVisualStyleBackColor = False
         '
         'AcceptButton
@@ -346,7 +348,7 @@ Partial Class CashRegisterPanel
         Me.AcceptButton.Name = "AcceptButton"
         Me.AcceptButton.Size = New System.Drawing.Size(194, 204)
         Me.AcceptButton.TabIndex = 1
-        Me.AcceptButton.Text = "Bezahlt"
+        Me.AcceptButton.Text = "bezahlen"
         Me.AcceptButton.UseVisualStyleBackColor = False
         '
         'MainTableLayoutPanel
@@ -378,41 +380,66 @@ Partial Class CashRegisterPanel
         Me.TextBoxTableLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.TextBoxTableLayoutPanel.ColumnCount = 1
         Me.TextBoxTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TextBoxTableLayoutPanel.Controls.Add(Me.MoneyOutTextBox, 0, 3)
+        Me.TextBoxTableLayoutPanel.Controls.Add(Me.LabelGegeben, 0, 0)
+        Me.TextBoxTableLayoutPanel.Controls.Add(Me.MoneyOutTextBox, 0, 5)
+        Me.TextBoxTableLayoutPanel.Controls.Add(Me.LabelRueck, 0, 4)
         Me.TextBoxTableLayoutPanel.Controls.Add(Me.MoneyInTextBox, 0, 1)
-        Me.TextBoxTableLayoutPanel.Controls.Add(Me.Label1, 0, 2)
-        Me.TextBoxTableLayoutPanel.Controls.Add(Me.Label2, 0, 0)
+        Me.TextBoxTableLayoutPanel.Controls.Add(Me.LabelPreis, 0, 2)
+        Me.TextBoxTableLayoutPanel.Controls.Add(Me.PriceTextBox, 0, 3)
         Me.TextBoxTableLayoutPanel.Location = New System.Drawing.Point(3, 3)
         Me.TextBoxTableLayoutPanel.Name = "TextBoxTableLayoutPanel"
-        Me.TextBoxTableLayoutPanel.RowCount = 4
-        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TextBoxTableLayoutPanel.RowCount = 6
+        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TextBoxTableLayoutPanel.Size = New System.Drawing.Size(106, 280)
         Me.TextBoxTableLayoutPanel.TabIndex = 0
         '
-        'Label1
+        'LabelRueck
         '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(5, 186)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(95, 24)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Rückgeld:"
+        Me.LabelRueck.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.LabelRueck.AutoSize = True
+        Me.LabelRueck.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelRueck.Location = New System.Drawing.Point(5, 206)
+        Me.LabelRueck.Name = "LabelRueck"
+        Me.LabelRueck.Size = New System.Drawing.Size(95, 24)
+        Me.LabelRueck.TabIndex = 2
+        Me.LabelRueck.Text = "Rückgeld:"
         '
-        'Label2
+        'LabelGegeben
         '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(5, 46)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(95, 24)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Gegeben:"
+        Me.LabelGegeben.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.LabelGegeben.AutoSize = True
+        Me.LabelGegeben.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelGegeben.Location = New System.Drawing.Point(5, 22)
+        Me.LabelGegeben.Name = "LabelGegeben"
+        Me.LabelGegeben.Size = New System.Drawing.Size(95, 24)
+        Me.LabelGegeben.TabIndex = 3
+        Me.LabelGegeben.Text = "Gegeben:"
+        '
+        'LabelPreis
+        '
+        Me.LabelPreis.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.LabelPreis.AutoSize = True
+        Me.LabelPreis.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.LabelPreis.Location = New System.Drawing.Point(24, 114)
+        Me.LabelPreis.Name = "LabelPreis"
+        Me.LabelPreis.Size = New System.Drawing.Size(57, 24)
+        Me.LabelPreis.TabIndex = 4
+        Me.LabelPreis.Text = "Preis:"
+        '
+        'PriceTextBox
+        '
+        Me.PriceTextBox.Location = New System.Drawing.Point(3, 141)
+        Me.PriceTextBox.Name = "PriceTextBox"
+        Me.PriceTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.PriceTextBox.TabIndex = 5
+        Me.PriceTextBox.Text = "0"
+        Me.PriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'CashRegisterPanel
         '
@@ -462,6 +489,8 @@ Partial Class CashRegisterPanel
     Friend WithEvents AcceptButton As Button
     Friend WithEvents MainTableLayoutPanel As TableLayoutPanel
     Friend WithEvents TextBoxTableLayoutPanel As TableLayoutPanel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents LabelRueck As Label
+    Friend WithEvents LabelGegeben As Label
+    Friend WithEvents LabelPreis As Label
+    Friend WithEvents PriceTextBox As TextBox
 End Class

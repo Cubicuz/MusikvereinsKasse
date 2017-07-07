@@ -49,8 +49,8 @@ Partial Class CashRegisterPanel
         Me.AcceptButton = New System.Windows.Forms.Button()
         Me.MainTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.TextBoxTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
-        Me.LabelRueck = New System.Windows.Forms.Label()
         Me.LabelGegeben = New System.Windows.Forms.Label()
+        Me.LabelRueck = New System.Windows.Forms.Label()
         Me.LabelPreis = New System.Windows.Forms.Label()
         Me.PriceTextBox = New System.Windows.Forms.TextBox()
         Me.BillTableLayoutPanel.SuspendLayout()
@@ -73,6 +73,7 @@ Partial Class CashRegisterPanel
         '
         Me.MoneyOutTextBox.Location = New System.Drawing.Point(3, 233)
         Me.MoneyOutTextBox.Name = "MoneyOutTextBox"
+        Me.MoneyOutTextBox.ReadOnly = True
         Me.MoneyOutTextBox.Size = New System.Drawing.Size(100, 20)
         Me.MoneyOutTextBox.TabIndex = 1
         Me.MoneyOutTextBox.Text = "0"
@@ -399,17 +400,6 @@ Partial Class CashRegisterPanel
         Me.TextBoxTableLayoutPanel.Size = New System.Drawing.Size(106, 280)
         Me.TextBoxTableLayoutPanel.TabIndex = 0
         '
-        'LabelRueck
-        '
-        Me.LabelRueck.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.LabelRueck.AutoSize = True
-        Me.LabelRueck.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelRueck.Location = New System.Drawing.Point(5, 206)
-        Me.LabelRueck.Name = "LabelRueck"
-        Me.LabelRueck.Size = New System.Drawing.Size(95, 24)
-        Me.LabelRueck.TabIndex = 2
-        Me.LabelRueck.Text = "Rückgeld:"
-        '
         'LabelGegeben
         '
         Me.LabelGegeben.Anchor = System.Windows.Forms.AnchorStyles.Bottom
@@ -420,6 +410,17 @@ Partial Class CashRegisterPanel
         Me.LabelGegeben.Size = New System.Drawing.Size(95, 24)
         Me.LabelGegeben.TabIndex = 3
         Me.LabelGegeben.Text = "Gegeben:"
+        '
+        'LabelRueck
+        '
+        Me.LabelRueck.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.LabelRueck.AutoSize = True
+        Me.LabelRueck.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelRueck.Location = New System.Drawing.Point(5, 206)
+        Me.LabelRueck.Name = "LabelRueck"
+        Me.LabelRueck.Size = New System.Drawing.Size(95, 24)
+        Me.LabelRueck.TabIndex = 2
+        Me.LabelRueck.Text = "Rückgeld:"
         '
         'LabelPreis
         '
@@ -436,6 +437,7 @@ Partial Class CashRegisterPanel
         '
         Me.PriceTextBox.Location = New System.Drawing.Point(3, 141)
         Me.PriceTextBox.Name = "PriceTextBox"
+        Me.PriceTextBox.ReadOnly = True
         Me.PriceTextBox.Size = New System.Drawing.Size(100, 20)
         Me.PriceTextBox.TabIndex = 5
         Me.PriceTextBox.Text = "0"

@@ -25,17 +25,17 @@ Partial Class MealControl
         Me.MainTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.NameLabel = New System.Windows.Forms.Label()
         Me.PriceTextBox = New System.Windows.Forms.TextBox()
-        Me.FullMealTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
-        Me.FullMealComboBox = New System.Windows.Forms.ComboBox()
-        Me.FullMealUpButton = New System.Windows.Forms.Button()
-        Me.FullMealDownButton = New System.Windows.Forms.Button()
         Me.HalfMealTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.HalfMealComboBox = New System.Windows.Forms.ComboBox()
         Me.HalfMealDownButton = New System.Windows.Forms.Button()
         Me.HalfMealUpButton = New System.Windows.Forms.Button()
+        Me.FullMealTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
+        Me.FullMealComboBox = New System.Windows.Forms.ComboBox()
+        Me.FullMealUpButton = New System.Windows.Forms.Button()
+        Me.FullMealDownButton = New System.Windows.Forms.Button()
         Me.MainTableLayoutPanel.SuspendLayout()
-        Me.FullMealTableLayoutPanel.SuspendLayout()
         Me.HalfMealTableLayoutPanel.SuspendLayout()
+        Me.FullMealTableLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'MainTableLayoutPanel
@@ -43,21 +43,22 @@ Partial Class MealControl
         Me.MainTableLayoutPanel.AutoSize = True
         Me.MainTableLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.MainTableLayoutPanel.ColumnCount = 4
-        Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200.0!))
+        Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.MainTableLayoutPanel.Controls.Add(Me.NameLabel, 0, 0)
         Me.MainTableLayoutPanel.Controls.Add(Me.PriceTextBox, 3, 0)
         Me.MainTableLayoutPanel.Controls.Add(Me.HalfMealTableLayoutPanel, 2, 0)
         Me.MainTableLayoutPanel.Controls.Add(Me.FullMealTableLayoutPanel, 1, 0)
-        Me.MainTableLayoutPanel.Location = New System.Drawing.Point(3, 3)
+        Me.MainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MainTableLayoutPanel.Location = New System.Drawing.Point(0, 0)
         Me.MainTableLayoutPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainTableLayoutPanel.MinimumSize = New System.Drawing.Size(250, 0)
         Me.MainTableLayoutPanel.Name = "MainTableLayoutPanel"
         Me.MainTableLayoutPanel.RowCount = 1
         Me.MainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.MainTableLayoutPanel.Size = New System.Drawing.Size(338, 79)
+        Me.MainTableLayoutPanel.Size = New System.Drawing.Size(250, 73)
         Me.MainTableLayoutPanel.TabIndex = 0
         '
         'NameLabel
@@ -65,7 +66,7 @@ Partial Class MealControl
         Me.NameLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.NameLabel.AutoSize = True
         Me.NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameLabel.Location = New System.Drawing.Point(71, 29)
+        Me.NameLabel.Location = New System.Drawing.Point(27, 26)
         Me.NameLabel.Name = "NameLabel"
         Me.NameLabel.Size = New System.Drawing.Size(57, 20)
         Me.NameLabel.TabIndex = 3
@@ -75,13 +76,69 @@ Partial Class MealControl
         '
         Me.PriceTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PriceTextBox.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.PriceTextBox.Location = New System.Drawing.Point(295, 29)
+        Me.PriceTextBox.Location = New System.Drawing.Point(207, 26)
         Me.PriceTextBox.MinimumSize = New System.Drawing.Size(40, 4)
         Me.PriceTextBox.Name = "PriceTextBox"
+        Me.PriceTextBox.ReadOnly = True
         Me.PriceTextBox.Size = New System.Drawing.Size(40, 20)
         Me.PriceTextBox.TabIndex = 1
         Me.PriceTextBox.TabStop = False
         Me.PriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'HalfMealTableLayoutPanel
+        '
+        Me.HalfMealTableLayoutPanel.AutoSize = True
+        Me.HalfMealTableLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.HalfMealTableLayoutPanel.ColumnCount = 1
+        Me.HalfMealTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.HalfMealTableLayoutPanel.Controls.Add(Me.HalfMealComboBox, 0, 1)
+        Me.HalfMealTableLayoutPanel.Controls.Add(Me.HalfMealDownButton, 0, 2)
+        Me.HalfMealTableLayoutPanel.Controls.Add(Me.HalfMealUpButton, 0, 0)
+        Me.HalfMealTableLayoutPanel.Location = New System.Drawing.Point(158, 0)
+        Me.HalfMealTableLayoutPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.HalfMealTableLayoutPanel.Name = "HalfMealTableLayoutPanel"
+        Me.HalfMealTableLayoutPanel.RowCount = 3
+        Me.HalfMealTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.HalfMealTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.HalfMealTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.HalfMealTableLayoutPanel.Size = New System.Drawing.Size(46, 73)
+        Me.HalfMealTableLayoutPanel.TabIndex = 5
+        '
+        'HalfMealComboBox
+        '
+        Me.HalfMealComboBox.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.HalfMealComboBox.FormattingEnabled = True
+        Me.HalfMealComboBox.ImeMode = System.Windows.Forms.ImeMode.Off
+        Me.HalfMealComboBox.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.HalfMealComboBox.Location = New System.Drawing.Point(3, 26)
+        Me.HalfMealComboBox.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.HalfMealComboBox.Name = "HalfMealComboBox"
+        Me.HalfMealComboBox.Size = New System.Drawing.Size(40, 21)
+        Me.HalfMealComboBox.TabIndex = 4
+        Me.HalfMealComboBox.TabStop = False
+        Me.HalfMealComboBox.Text = "0"
+        '
+        'HalfMealDownButton
+        '
+        Me.HalfMealDownButton.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.HalfMealDownButton.Location = New System.Drawing.Point(3, 50)
+        Me.HalfMealDownButton.Name = "HalfMealDownButton"
+        Me.HalfMealDownButton.Size = New System.Drawing.Size(40, 20)
+        Me.HalfMealDownButton.TabIndex = 5
+        Me.HalfMealDownButton.TabStop = False
+        Me.HalfMealDownButton.Text = "▼"
+        Me.HalfMealDownButton.UseVisualStyleBackColor = True
+        '
+        'HalfMealUpButton
+        '
+        Me.HalfMealUpButton.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.HalfMealUpButton.Location = New System.Drawing.Point(3, 3)
+        Me.HalfMealUpButton.Name = "HalfMealUpButton"
+        Me.HalfMealUpButton.Size = New System.Drawing.Size(40, 20)
+        Me.HalfMealUpButton.TabIndex = 6
+        Me.HalfMealUpButton.TabStop = False
+        Me.HalfMealUpButton.Text = "▲"
+        Me.HalfMealUpButton.UseVisualStyleBackColor = True
         '
         'FullMealTableLayoutPanel
         '
@@ -92,14 +149,14 @@ Partial Class MealControl
         Me.FullMealTableLayoutPanel.Controls.Add(Me.FullMealComboBox, 0, 1)
         Me.FullMealTableLayoutPanel.Controls.Add(Me.FullMealUpButton, 0, 0)
         Me.FullMealTableLayoutPanel.Controls.Add(Me.FullMealDownButton, 0, 2)
-        Me.FullMealTableLayoutPanel.Location = New System.Drawing.Point(200, 0)
+        Me.FullMealTableLayoutPanel.Location = New System.Drawing.Point(112, 0)
         Me.FullMealTableLayoutPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.FullMealTableLayoutPanel.Name = "FullMealTableLayoutPanel"
         Me.FullMealTableLayoutPanel.RowCount = 3
         Me.FullMealTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.FullMealTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.FullMealTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.FullMealTableLayoutPanel.Size = New System.Drawing.Size(46, 79)
+        Me.FullMealTableLayoutPanel.Size = New System.Drawing.Size(46, 73)
         Me.FullMealTableLayoutPanel.TabIndex = 4
         '
         'FullMealComboBox
@@ -108,7 +165,8 @@ Partial Class MealControl
         Me.FullMealComboBox.FormattingEnabled = True
         Me.FullMealComboBox.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.FullMealComboBox.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.FullMealComboBox.Location = New System.Drawing.Point(3, 29)
+        Me.FullMealComboBox.Location = New System.Drawing.Point(3, 26)
+        Me.FullMealComboBox.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.FullMealComboBox.MaxDropDownItems = 11
         Me.FullMealComboBox.Name = "FullMealComboBox"
         Me.FullMealComboBox.Size = New System.Drawing.Size(40, 21)
@@ -129,67 +187,13 @@ Partial Class MealControl
         'FullMealDownButton
         '
         Me.FullMealDownButton.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FullMealDownButton.Location = New System.Drawing.Point(3, 56)
+        Me.FullMealDownButton.Location = New System.Drawing.Point(3, 50)
         Me.FullMealDownButton.Name = "FullMealDownButton"
         Me.FullMealDownButton.Size = New System.Drawing.Size(40, 20)
         Me.FullMealDownButton.TabIndex = 4
         Me.FullMealDownButton.TabStop = False
         Me.FullMealDownButton.Text = "▼"
         Me.FullMealDownButton.UseVisualStyleBackColor = True
-        '
-        'HalfMealTableLayoutPanel
-        '
-        Me.HalfMealTableLayoutPanel.AutoSize = True
-        Me.HalfMealTableLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.HalfMealTableLayoutPanel.ColumnCount = 1
-        Me.HalfMealTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.HalfMealTableLayoutPanel.Controls.Add(Me.HalfMealComboBox, 0, 1)
-        Me.HalfMealTableLayoutPanel.Controls.Add(Me.HalfMealDownButton, 0, 2)
-        Me.HalfMealTableLayoutPanel.Controls.Add(Me.HalfMealUpButton, 0, 0)
-        Me.HalfMealTableLayoutPanel.Location = New System.Drawing.Point(246, 0)
-        Me.HalfMealTableLayoutPanel.Margin = New System.Windows.Forms.Padding(0)
-        Me.HalfMealTableLayoutPanel.Name = "HalfMealTableLayoutPanel"
-        Me.HalfMealTableLayoutPanel.RowCount = 3
-        Me.HalfMealTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.HalfMealTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.HalfMealTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.HalfMealTableLayoutPanel.Size = New System.Drawing.Size(46, 79)
-        Me.HalfMealTableLayoutPanel.TabIndex = 5
-        '
-        'HalfMealComboBox
-        '
-        Me.HalfMealComboBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.HalfMealComboBox.FormattingEnabled = True
-        Me.HalfMealComboBox.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.HalfMealComboBox.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.HalfMealComboBox.Location = New System.Drawing.Point(3, 29)
-        Me.HalfMealComboBox.Name = "HalfMealComboBox"
-        Me.HalfMealComboBox.Size = New System.Drawing.Size(40, 21)
-        Me.HalfMealComboBox.TabIndex = 4
-        Me.HalfMealComboBox.TabStop = False
-        Me.HalfMealComboBox.Text = "0"
-        '
-        'HalfMealDownButton
-        '
-        Me.HalfMealDownButton.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.HalfMealDownButton.Location = New System.Drawing.Point(3, 56)
-        Me.HalfMealDownButton.Name = "HalfMealDownButton"
-        Me.HalfMealDownButton.Size = New System.Drawing.Size(40, 20)
-        Me.HalfMealDownButton.TabIndex = 5
-        Me.HalfMealDownButton.TabStop = False
-        Me.HalfMealDownButton.Text = "▼"
-        Me.HalfMealDownButton.UseVisualStyleBackColor = True
-        '
-        'HalfMealUpButton
-        '
-        Me.HalfMealUpButton.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.HalfMealUpButton.Location = New System.Drawing.Point(3, 3)
-        Me.HalfMealUpButton.Name = "HalfMealUpButton"
-        Me.HalfMealUpButton.Size = New System.Drawing.Size(40, 20)
-        Me.HalfMealUpButton.TabIndex = 6
-        Me.HalfMealUpButton.TabStop = False
-        Me.HalfMealUpButton.Text = "▲"
-        Me.HalfMealUpButton.UseVisualStyleBackColor = True
         '
         'MealControl
         '
@@ -199,11 +203,11 @@ Partial Class MealControl
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Controls.Add(Me.MainTableLayoutPanel)
         Me.Name = "MealControl"
-        Me.Size = New System.Drawing.Size(341, 82)
+        Me.Size = New System.Drawing.Size(250, 73)
         Me.MainTableLayoutPanel.ResumeLayout(False)
         Me.MainTableLayoutPanel.PerformLayout()
-        Me.FullMealTableLayoutPanel.ResumeLayout(False)
         Me.HalfMealTableLayoutPanel.ResumeLayout(False)
+        Me.FullMealTableLayoutPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -42,6 +42,9 @@ Public Class MealControl
             HalfMealTableLayoutPanel.Enabled = False
         End If
 
+        FullMealDownButton.Enabled = Not m.Amount = 0
+        HalfMealDownButton.Enabled = Not m.AmountHalfPrice = 0
+
         AddHandler MyMeal.amountChanged, AddressOf HandleMealAmountChanged
         AddHandler MyMeal.amountHalfPriceChanged, AddressOf HandleMealAmountHalfPriceChanged
     End Sub
@@ -72,13 +75,22 @@ Public Class MealControl
 #Region "---------- ComboboxHandler ----------"
     Private Sub HandleFullMealSelectionChanged(sender As Object, e As EventArgs) Handles FullMealComboBox.TextChanged
         If Not FullMealComboBox.Text.Equals(MyMeal.Amount) Then
-            MyMeal.Amount = Integer.Parse(FullMealComboBox.Text)
+            Try
+                MyMeal.Amount = Integer.Parse(FullMealComboBox.Text)
+            Catch
+                MyMeal.Amount = 0
+            End Try
+
         End If
     End Sub
 
     Private Sub HandleHalfMealSelectionChanged(sender As Object, e As EventArgs) Handles HalfMealComboBox.TextChanged
         If Not HalfMealComboBox.Text.Equals(MyMeal.AmountHalfPrice) Then
-            MyMeal.AmountHalfPrice = Integer.Parse(HalfMealComboBox.Text)
+            Try
+                MyMeal.AmountHalfPrice = Integer.Parse(HalfMealComboBox.Text)
+            Catch
+                MyMeal.AmountHalfPrice = 0
+            End Try
         End If
     End Sub
 #End Region
@@ -89,6 +101,7 @@ Public Class MealControl
             Me.FullMealComboBox.Text = MyMeal.Amount
         End If
         UpdatePrice()
+        FullMealDownButton.Enabled = Not sender.Amount = 0
     End Sub
 
     Private Sub HandleMealAmountHalfPriceChanged(sender As Meal, diff As Integer)
@@ -96,6 +109,7 @@ Public Class MealControl
             Me.HalfMealComboBox.Text = MyMeal.AmountHalfPrice
         End If
         UpdatePrice()
+        HalfMealDownButton.Enabled = Not sender.AmountHalfPrice = 0
     End Sub
 
     Private Sub UpdatePrice()

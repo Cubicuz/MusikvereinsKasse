@@ -10,6 +10,8 @@ Public Class CurrentOrderPanel
             For Each meal In mg.Meals
                 Dim mc As New MealControl(meal)
                 mc.BackColor = Color.LightGray
+                mc.Dock = DockStyle.Fill
+                mc.AutoSizeMode = AutoSizeMode.GrowOnly
                 meal.Amount += 1
                 AddHandler meal.amountChanged, Sub()
                                                    If meal.Amount = 0 And meal.AmountHalfPrice = 0 Then

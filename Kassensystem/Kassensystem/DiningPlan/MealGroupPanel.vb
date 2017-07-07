@@ -25,6 +25,7 @@ Public Class MealGroupPanel
                 Dim mealC As MealControl = New MealControl(m)
                 mealC.BackColor = mg.BgColor
                 MealOrganizerFlowLayoutPanel.Controls.Add(mealC)
+                mealC.Dock = DockStyle.Fill
                 Me.MealControlList.Add(mealC)
             Next
         Next

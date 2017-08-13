@@ -177,7 +177,11 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="exampleDiningPlan.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kassensystem_Logic\Kassensystem_Logic.csproj">
       <Project>{F7410DFF-F297-4031-8229-D81D74D6881F}</Project>

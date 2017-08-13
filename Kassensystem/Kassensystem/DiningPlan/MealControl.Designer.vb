@@ -65,12 +65,13 @@ Partial Class MealControl
         '
         Me.NameLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.NameLabel.AutoSize = True
-        Me.NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameLabel.Location = New System.Drawing.Point(27, 26)
+        Me.NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameLabel.Location = New System.Drawing.Point(23, 24)
         Me.NameLabel.Name = "NameLabel"
-        Me.NameLabel.Size = New System.Drawing.Size(57, 20)
+        Me.NameLabel.Size = New System.Drawing.Size(66, 24)
         Me.NameLabel.TabIndex = 3
         Me.NameLabel.Text = "Label1"
+        Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PriceTextBox
         '

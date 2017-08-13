@@ -13,7 +13,7 @@ Public Class MainWindow
         InitializeComponent()
         Dim M() As Meal = {New Meal(1, "Maultaschen", 5.0, 2.8), New Meal(2, "Bratwurst", 4.3, 0), New Meal(3, "Salzfleisch", 4.7, 3.0)}
         Dim MG() As MealGroup = {New MealGroup(M, "Group1", Color.Aqua)}
-        Dim DNP As DiningPlan = FileIO.LoadDiningPlan("C:\Users\michi\Desktop\exampleDiningPlan.xml") 'New DiningPlan(MG)
+        Dim DNP As DiningPlan = FileIO.LoadDiningPlan("exampleDiningPlan.xml") 'New DiningPlan(MG)
         DiningPlan.DiningPlanInstance = DNP
         Dim MGP As MealGroupPanel = New MealGroupPanel(DNP)
         'Dim MC As MealControl = New MealControl(M(0))

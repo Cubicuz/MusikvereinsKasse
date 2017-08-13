@@ -1,0 +1,46 @@
+﻿<diningPlan>
+	<group name="Essen" color="orange">
+		<meal name="maultaschen">
+			<price>3,00</price>
+			<halfPrice>1,50</halfPrice>
+		</meal>
+		<meal name="besenteller">
+			<price>6,00</price>
+			<halfPrice>3,50</halfPrice>
+		</meal>
+		<meal name="Sauerkraut">
+			<price>3,00</price>
+			<halfPrice>1,50</halfPrice>
+		</meal>
+		<meal name="Bratwurst">
+			<price>6,00</price>
+			<halfPrice>3,50</halfPrice>
+		</meal>
+	</group>
+	<group name="Fesper" color="yellow">
+		<meal name="Brätbrot">
+			<price>3,00</price>
+		</meal>
+		<meal name="Käsebrot">
+			<price>6,00</price>
+		</meal>
+	</group>
+	<group name="Getränke" color="green">
+		<meal name="1/4 wein">
+			<price>2,50</price>
+			<position>0</position>
+		</meal>
+		<meal name="1l wein">
+			<price>9,00</price>
+			<position>1</position>
+		</meal>
+		<meal name="Cola/Fanta/Spezi">
+			<price>1,80</price>
+			<position>2</position>
+		</meal>
+		<meal name="Wasser">
+			<price>1,00</price>
+			<position>3</position>
+		</meal>
+	</group>
+</diningPlan>

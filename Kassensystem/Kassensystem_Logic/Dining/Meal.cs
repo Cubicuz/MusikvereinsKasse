@@ -98,5 +98,10 @@ namespace Kassensystem_Logic.Dining
             totalHalfAmount += amountHalfPrice;
             AmountHalfPrice = 0;
         }
+
+        public override string ToString()
+        {
+            return Name; 
+        }
     }
 }

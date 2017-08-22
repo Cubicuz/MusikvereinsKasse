@@ -40,7 +40,9 @@ Public Class MealControl
         NameLabel.Text = m.Name
         If m.HalfPrice = 0 Then
             HalfMealTableLayoutPanel.Enabled = False
+            HalfMealTableLayoutPanel.Visible = False
         End If
+        HalfMealTableLayoutPanel.Visible = False
 
         FullMealDownButton.Enabled = Not m.Amount = 0
         HalfMealDownButton.Enabled = Not m.AmountHalfPrice = 0

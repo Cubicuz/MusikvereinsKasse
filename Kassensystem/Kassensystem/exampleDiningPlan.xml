@@ -1,7 +1,7 @@
 ﻿<diningPlan>
   
   <!-- warme Speißen -->
-	<group name="Essen" color="orange">
+	<group name="Essen" color="orange" tab="Essen">
     <meal name="Besenteller">
       <price>6,00</price>
       <halfPrice>4,50</halfPrice>
@@ -59,7 +59,7 @@
   </group>
   
   <!-- kalte Speißen -->
-	<group name="Fesper" color="yellow">
+	<group name="Fesper" color="yellow" tab="Essen">
 		<meal name="Brätbrot">
 			<price>3,00</price>
 		</meal>
@@ -81,7 +81,7 @@
   </group>
   
   <!-- Getränke -->
-	<group name="Getränke" color="green">
+	<group name="Getränke" color="green" tab="Trinken">
     <meal name="0,1lSekt">
       <price>1,50</price>
     </meal>

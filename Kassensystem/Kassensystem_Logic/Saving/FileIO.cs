@@ -13,13 +13,18 @@ namespace Kassensystem_Logic.Saving {
         public static string DiningPlanPath;
         public static string OrderPath;
 
+        private static FileIO myFile;
+
         public static DiningPlan LoadDiningPlan(string filePath) {
             XDocument doc = XDocument.Load(filePath);
             List<MealGroup> outMealList = new List<MealGroup>();
 
+            // jede Gruppe
             foreach (XElement groupNode in doc.Descendants("group")) {
                 int id = 0;
                 List<Meal> groupList = new List<Meal>();
+
+                // jedes Gericht
                 foreach (XElement mealNode in groupNode.Descendants("meal")){
                     Console.WriteLine(mealNode.Attribute("name").Value);
                     string name = mealNode.Attribute("name").Value;
@@ -33,7 +38,7 @@ namespace Kassensystem_Logic.Saving {
                     groupList.Add(new Meal(id, name, price, halfPrice));
                     id++;
                 }
-                outMealList.Add(new MealGroup(groupList.ToArray(), groupNode.Attribute("name").Value, groupNode.Attribute("color").Value));
+                outMealList.Add(new MealGroup(groupList.ToArray(), groupNode.Attribute("name").Value, groupNode.Attribute("color").Value, groupNode.Attribute("tab").Value));
             }
             DiningPlan dp = new DiningPlan(outMealList.ToArray());
             return dp;
@@ -47,7 +52,11 @@ namespace Kassensystem_Logic.Saving {
         /// this is just a human readable storage, not meant to be loaded again
         /// </summary>
         public static void saveOrder(DiningPlan d) {
+            if (myFile != null)
+            {
 
+            }
         }
+
     }
 }

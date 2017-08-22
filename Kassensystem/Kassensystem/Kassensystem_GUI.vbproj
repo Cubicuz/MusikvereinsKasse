@@ -107,6 +107,12 @@
     <Compile Include="CurrentOrder\CurrentOrderPanel.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="DiningPlan\DiningPlanPanel.Designer.vb">
+      <DependentUpon>DiningPlanPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DiningPlan\DiningPlanPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="DiningPlan\MealControl.Designer.vb">
       <DependentUpon>MealControl.vb</DependentUpon>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CurrentOrder\CurrentOrderPanel.resx">
       <DependentUpon>CurrentOrderPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiningPlan\DiningPlanPanel.resx">
+      <DependentUpon>DiningPlanPanel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DiningPlan\MealControl.resx">
       <DependentUpon>MealControl.vb</DependentUpon>

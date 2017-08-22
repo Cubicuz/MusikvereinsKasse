@@ -41,10 +41,12 @@ Partial Class MainWindow
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateiToolStripMenuItem, Me.MenüplanToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1264, 24)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(9, 3, 0, 3)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1896, 35)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -52,55 +54,55 @@ Partial Class MainWindow
         '
         Me.DateiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ÖffnenToolStripMenuItem, Me.SpeichernToolStripMenuItem, Me.ToolStripMenuItem1, Me.BeendenToolStripMenuItem})
         Me.DateiToolStripMenuItem.Name = "DateiToolStripMenuItem"
-        Me.DateiToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
+        Me.DateiToolStripMenuItem.Size = New System.Drawing.Size(65, 29)
         Me.DateiToolStripMenuItem.Text = "Datei"
         '
         'ÖffnenToolStripMenuItem
         '
         Me.ÖffnenToolStripMenuItem.Name = "ÖffnenToolStripMenuItem"
-        Me.ÖffnenToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.ÖffnenToolStripMenuItem.Size = New System.Drawing.Size(173, 30)
         Me.ÖffnenToolStripMenuItem.Text = "Öffnen"
         '
         'SpeichernToolStripMenuItem
         '
         Me.SpeichernToolStripMenuItem.Name = "SpeichernToolStripMenuItem"
-        Me.SpeichernToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.SpeichernToolStripMenuItem.Size = New System.Drawing.Size(173, 30)
         Me.SpeichernToolStripMenuItem.Text = "Speichern"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(123, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(170, 6)
         '
         'BeendenToolStripMenuItem
         '
         Me.BeendenToolStripMenuItem.Name = "BeendenToolStripMenuItem"
-        Me.BeendenToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.BeendenToolStripMenuItem.Size = New System.Drawing.Size(173, 30)
         Me.BeendenToolStripMenuItem.Text = "Beenden"
         '
         'MenüplanToolStripMenuItem
         '
         Me.MenüplanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LadenToolStripMenuItem, Me.EditierenToolStripMenuItem, Me.EditierenToolStripMenuItem1})
         Me.MenüplanToolStripMenuItem.Name = "MenüplanToolStripMenuItem"
-        Me.MenüplanToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
+        Me.MenüplanToolStripMenuItem.Size = New System.Drawing.Size(103, 29)
         Me.MenüplanToolStripMenuItem.Text = "Menüplan"
         '
         'LadenToolStripMenuItem
         '
         Me.LadenToolStripMenuItem.Name = "LadenToolStripMenuItem"
-        Me.LadenToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.LadenToolStripMenuItem.Size = New System.Drawing.Size(173, 30)
         Me.LadenToolStripMenuItem.Text = "Laden"
         '
         'EditierenToolStripMenuItem
         '
         Me.EditierenToolStripMenuItem.Name = "EditierenToolStripMenuItem"
-        Me.EditierenToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.EditierenToolStripMenuItem.Size = New System.Drawing.Size(173, 30)
         Me.EditierenToolStripMenuItem.Text = "Speichern"
         '
         'EditierenToolStripMenuItem1
         '
         Me.EditierenToolStripMenuItem1.Name = "EditierenToolStripMenuItem1"
-        Me.EditierenToolStripMenuItem1.Size = New System.Drawing.Size(126, 22)
+        Me.EditierenToolStripMenuItem1.Size = New System.Drawing.Size(173, 30)
         Me.EditierenToolStripMenuItem1.Text = "Editieren"
         '
         'TableLayoutPanel1
@@ -111,12 +113,13 @@ Partial Class MainWindow
         Me.TableLayoutPanel1.Controls.Add(Me.CashRegisterPanel1, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.CurrentOrderPanel1, 1, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 24)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 35)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1264, 737)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1896, 1136)
         Me.TableLayoutPanel1.TabIndex = 2
         '
         'CashRegisterPanel1
@@ -124,9 +127,10 @@ Partial Class MainWindow
         Me.CashRegisterPanel1.AutoSize = True
         Me.CashRegisterPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.CashRegisterPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CashRegisterPanel1.Location = New System.Drawing.Point(3, 442)
+        Me.CashRegisterPanel1.Location = New System.Drawing.Point(4, 919)
+        Me.CashRegisterPanel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.CashRegisterPanel1.Name = "CashRegisterPanel1"
-        Me.CashRegisterPanel1.Size = New System.Drawing.Size(685, 292)
+        Me.CashRegisterPanel1.Size = New System.Drawing.Size(730, 212)
         Me.CashRegisterPanel1.TabIndex = 0
         '
         'CurrentOrderPanel1
@@ -135,21 +139,23 @@ Partial Class MainWindow
         Me.CurrentOrderPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.CurrentOrderPanel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.CurrentOrderPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CurrentOrderPanel1.Location = New System.Drawing.Point(1061, 3)
-        Me.CurrentOrderPanel1.MinimumSize = New System.Drawing.Size(200, 300)
+        Me.CurrentOrderPanel1.Location = New System.Drawing.Point(1590, 8)
+        Me.CurrentOrderPanel1.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
+        Me.CurrentOrderPanel1.MinimumSize = New System.Drawing.Size(300, 462)
         Me.CurrentOrderPanel1.Name = "CurrentOrderPanel1"
         Me.TableLayoutPanel1.SetRowSpan(Me.CurrentOrderPanel1, 2)
-        Me.CurrentOrderPanel1.Size = New System.Drawing.Size(200, 731)
+        Me.CurrentOrderPanel1.Size = New System.Drawing.Size(300, 1120)
         Me.CurrentOrderPanel1.TabIndex = 1
         '
         'MainWindow
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1264, 761)
+        Me.ClientSize = New System.Drawing.Size(1896, 1171)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "MainWindow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Kassensystem"

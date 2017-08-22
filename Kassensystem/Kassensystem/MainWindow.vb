@@ -15,10 +15,10 @@ Public Class MainWindow
         Dim MG() As MealGroup = {New MealGroup(M, "Group1", Color.Aqua)}
         Dim DNP As DiningPlan = FileIO.LoadDiningPlan("exampleDiningPlan.xml") 'New DiningPlan(MG)
         DiningPlan.DiningPlanInstance = DNP
-        Dim MGP As MealGroupPanel = New MealGroupPanel(DNP)
+        Dim DNPP As DiningPlanPanel = New DiningPlanPanel(DNP)
         'Dim MC As MealControl = New MealControl(M(0))
-        TableLayoutPanel1.Controls.Add(MGP, 0, 0)
-        MGP.Dock = DockStyle.Fill
+        TableLayoutPanel1.Controls.Add(DNPP, 0, 0)
+        DNPP.Dock = DockStyle.Fill
         CurrentOrderPanel1.InitializeCurrentOrderPanel(DNP)
         'FileIO.loadDiningPlan("C:\Users\PegaMenis\ownCloud\Musikverein\Kassensystem\exampleDiningPlan.xml")
     End Sub

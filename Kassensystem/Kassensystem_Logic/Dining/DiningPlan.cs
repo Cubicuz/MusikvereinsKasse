@@ -99,5 +99,15 @@ namespace Kassensystem_Logic.Dining {
         private void onMealHalfAmountChanged(Meal sender, int diffAmount) {
             Price += diffAmount * sender.HalfPrice;
         }
+
+        public override string ToString()
+        {
+            string line = "";
+            for (int i = 0; i < Groups.Length; i++)
+            {
+                line += Groups[i].ToString() + ";";
+            }
+            return line;
+        }
     }
 }

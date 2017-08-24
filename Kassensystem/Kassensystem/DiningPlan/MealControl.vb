@@ -72,6 +72,21 @@ Public Class MealControl
     Private Sub HalfMealUpButton_Click(sender As Object, e As EventArgs) Handles HalfMealUpButton.Click
         MyMeal.AmountHalfPrice += 1
     End Sub
+    Private Sub NameLabel_Click(sender As Object, e As MouseEventArgs) Handles NameLabel.MouseDown
+        If e.Button = MouseButtons.Left Then
+            MyMeal.Amount += 1
+        ElseIf e.Button = MouseButtons.Right Then
+            MyMeal.Amount -= 1
+        End If
+    End Sub
+
+    Private Sub MainTableLayoutPanel_Paint(sender As Object, e As MouseEventArgs) Handles MainTableLayoutPanel.MouseDown
+        If e.Button = MouseButtons.Left Then
+            MyMeal.Amount += 1
+        ElseIf e.Button = MouseButtons.Right Then
+            MyMeal.Amount -= 1
+        End If
+    End Sub
 
 #End Region
 #Region "---------- ComboboxHandler ----------"
@@ -117,5 +132,7 @@ Public Class MealControl
     Private Sub UpdatePrice()
         PriceTextBox.Text = (MyMeal.Price * MyMeal.Amount + MyMeal.HalfPrice * MyMeal.AmountHalfPrice).ToString("C")
     End Sub
+
+
 #End Region
 End Class

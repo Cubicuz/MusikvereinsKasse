@@ -81,7 +81,7 @@
   </group>
   
   <!-- Getränke -->
-	<group name="Getränke" color="green" tab="Trinken">
+	<group name="Getränke" color="#b3fdff" tab="Trinken">
     <meal name="0,1lSekt">
       <price>1,50</price>
     </meal>

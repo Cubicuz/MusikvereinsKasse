@@ -32,11 +32,11 @@ Partial Class MainWindow
         Me.LadenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditierenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditierenToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.MainTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.CashRegisterPanel1 = New Kassensystem.CashRegisterPanel()
         Me.CurrentOrderPanel1 = New Kassensystem.CurrentOrderPanel()
         Me.MenuStrip1.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
+        Me.MainTableLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -105,32 +105,32 @@ Partial Class MainWindow
         Me.EditierenToolStripMenuItem1.Size = New System.Drawing.Size(173, 30)
         Me.EditierenToolStripMenuItem1.Text = "Editieren"
         '
-        'TableLayoutPanel1
+        'MainTableLayoutPanel
         '
-        Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.Controls.Add(Me.CashRegisterPanel1, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.CurrentOrderPanel1, 1, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 35)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1896, 1136)
-        Me.TableLayoutPanel1.TabIndex = 2
+        Me.MainTableLayoutPanel.ColumnCount = 2
+        Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.MainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.MainTableLayoutPanel.Controls.Add(Me.CashRegisterPanel1, 0, 1)
+        Me.MainTableLayoutPanel.Controls.Add(Me.CurrentOrderPanel1, 1, 0)
+        Me.MainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MainTableLayoutPanel.Location = New System.Drawing.Point(0, 35)
+        Me.MainTableLayoutPanel.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MainTableLayoutPanel.Name = "MainTableLayoutPanel"
+        Me.MainTableLayoutPanel.RowCount = 2
+        Me.MainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.MainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.MainTableLayoutPanel.Size = New System.Drawing.Size(1896, 1136)
+        Me.MainTableLayoutPanel.TabIndex = 2
         '
         'CashRegisterPanel1
         '
         Me.CashRegisterPanel1.AutoSize = True
         Me.CashRegisterPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.CashRegisterPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CashRegisterPanel1.Location = New System.Drawing.Point(4, 919)
+        Me.CashRegisterPanel1.Location = New System.Drawing.Point(4, 843)
         Me.CashRegisterPanel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.CashRegisterPanel1.Name = "CashRegisterPanel1"
-        Me.CashRegisterPanel1.Size = New System.Drawing.Size(730, 212)
+        Me.CashRegisterPanel1.Size = New System.Drawing.Size(910, 288)
         Me.CashRegisterPanel1.TabIndex = 0
         '
         'CurrentOrderPanel1
@@ -143,7 +143,7 @@ Partial Class MainWindow
         Me.CurrentOrderPanel1.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.CurrentOrderPanel1.MinimumSize = New System.Drawing.Size(300, 462)
         Me.CurrentOrderPanel1.Name = "CurrentOrderPanel1"
-        Me.TableLayoutPanel1.SetRowSpan(Me.CurrentOrderPanel1, 2)
+        Me.MainTableLayoutPanel.SetRowSpan(Me.CurrentOrderPanel1, 2)
         Me.CurrentOrderPanel1.Size = New System.Drawing.Size(300, 1120)
         Me.CurrentOrderPanel1.TabIndex = 1
         '
@@ -152,7 +152,7 @@ Partial Class MainWindow
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1896, 1171)
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.MainTableLayoutPanel)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -161,8 +161,8 @@ Partial Class MainWindow
         Me.Text = "Kassensystem"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
+        Me.MainTableLayoutPanel.ResumeLayout(False)
+        Me.MainTableLayoutPanel.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -178,7 +178,7 @@ Partial Class MainWindow
     Friend WithEvents LadenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditierenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditierenToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents MainTableLayoutPanel As TableLayoutPanel
     Friend WithEvents CashRegisterPanel1 As CashRegisterPanel
     Friend WithEvents CurrentOrderPanel1 As CurrentOrderPanel
 End Class

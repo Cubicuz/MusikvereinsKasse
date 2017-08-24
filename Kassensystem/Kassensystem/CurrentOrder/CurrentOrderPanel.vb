@@ -12,6 +12,7 @@ Public Class CurrentOrderPanel
                 mc.BackColor = Color.LightGray
                 mc.Dock = DockStyle.Fill
                 mc.AutoSizeMode = AutoSizeMode.GrowOnly
+                mc.PriceTextBox.Visible = True
                 meal.Amount += 1
                 AddHandler meal.amountChanged, Sub()
                                                    If meal.Amount = 0 And meal.AmountHalfPrice = 0 Then

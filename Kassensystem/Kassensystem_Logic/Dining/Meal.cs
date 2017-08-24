@@ -30,7 +30,7 @@ namespace Kassensystem_Logic.Dining
             }
             set
             {
-                if (amount != value && amount >= 0)
+                if (amount != value && value >= 0)
                 {
                     int diff = value - amount;
                     amount = value;
@@ -51,7 +51,7 @@ namespace Kassensystem_Logic.Dining
             }
             set
             {
-                if (amountHalfPrice != value)
+                if (amountHalfPrice != value && value >= 0)
                 {
                     int diff = value - amountHalfPrice;
                     amountHalfPrice = value;

@@ -17,7 +17,13 @@ namespace Kassensystem_Logic.Dining {
         public MealGroup(Meal [] m, string name, string color, string tab = "0") {
             Meals = m;
             Name = name;
-            BgColor = System.Drawing.Color.FromName(color);
+            if (color.First() == '#')
+            {
+                BgColor = System.Drawing.ColorTranslator.FromHtml(color);
+            } else
+            {
+                BgColor = System.Drawing.Color.FromName(color);
+            }
             this.tab = tab;
         }
 

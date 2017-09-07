@@ -141,6 +141,10 @@ Public Class CashRegisterPanel
         MoneyOutTextBox_ChangeText()
     End Sub
 
+    Private Sub PricaTextBox_TextChanged(sender As Object, e As EventArgs) Handles PriceTextBox.TextChanged
+        MoneyOutTextBox_ChangeText()
+    End Sub
+
     Private Sub MoneyOutTextBox_ChangeText()
         If DiningPlan.DiningPlanInstance Is Nothing Then
             MoneyOutTextBox.Text = "---"

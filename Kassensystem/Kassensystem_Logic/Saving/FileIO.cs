@@ -2,23 +2,37 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Xml.Linq;
+using System.Web;
 
 namespace Kassensystem_Logic.Saving {
     public class FileIO {
 
-        public static string DiningPlanPath;
-        public static string OrderPath;
+        private const char separator = ';';
+        private static string _OrderPath;
+        private static Dictionary<string, int> _MealToAmount;
 
-        private static FileIO myFile;
+        public static string OrderFile
+        {
+            get
+            {
+                return _OrderPath;
+            }
+            set
+            {
+                if (value.Equals(_OrderPath))
+                {
+                    return;
+                }
+                _OrderPath = value;
+            }
+        }
 
         public static DiningPlan LoadDiningPlan(string filePath) {
             XDocument doc = XDocument.Load(filePath);
             List<MealGroup> outMealList = new List<MealGroup>();
-
+            _MealToAmount = new Dictionary<string, int>();
             // jede Gruppe
             foreach (XElement groupNode in doc.Descendants("group")) {
                 int id = 0;
@@ -45,18 +59,96 @@ namespace Kassensystem_Logic.Saving {
         }
 
         public static void saveDiningPlan(string filePath, DiningPlan d) {
+            XElement root = new XElement("diningPlan");
+            foreach (var MG in d.Groups)
+            {
+                XElement MGXML = new XElement("group");
+                MGXML.SetAttributeValue("name", MG.Name);
+                MGXML.SetAttributeValue("color", MG.BgColor);
+                MGXML.SetAttributeValue("tab", MG.tab);
+                foreach (var M in MG.Meals)
+                {
+                    XElement price = new XElement("price");
+                    price.Value = M.Price.ToString();
+                    XElement MXML = new XElement("meal", price);
+                    MXML.SetAttributeValue("name", M.Name);
+                    MGXML.Add(MXML);
+                }
+                root.Add(MGXML);
+            }
+            XDocument doc = new XDocument();
+            doc.Add(root);
+            doc.Save(filePath);
+        }
 
+        public static void saveOrders()
+        {
+            saveOrders(_OrderPath);
         }
 
         /// <summary>
-        /// this is just a human readable storage, not meant to be loaded again
+        /// xmlStorage
         /// </summary>
-        public static void saveOrder(DiningPlan d) {
-            if (myFile != null)
+        public static void saveOrders(string path) {
+            if (path != null)
             {
+                foreach (var MG in DiningPlan.DiningPlanInstance.Groups)
+                {
+                    foreach (var M in MG.Meals)
+                    {
+                        if (!_MealToAmount.ContainsKey(M.Name))
+                        {
+                            _MealToAmount.Add(M.Name, M.TotalAmount);
+                        } else
+                        {
+                            _MealToAmount[M.Name] = M.TotalAmount;
+                        }
+                    }
+                }
+                using (var MyFile = new System.IO.StreamWriter(path, false))
+                {
+                    foreach (var item in _MealToAmount)
+                    {
+                        MyFile.WriteLine(item.Key + separator + item.Value + separator);
+                    }
+                }
 
             }
         }
 
+        public static bool loadOrders()
+        {
+            return loadOrders(_OrderPath);
+        }
+        public static bool loadOrders(string path)
+        {
+            var DP = DiningPlan.DiningPlanInstance;
+            if (DP == null)
+            {
+                return false;
+            }
+            string[] lines = File.ReadAllLines(path);
+            _MealToAmount = new Dictionary<string, int>();
+            foreach(var line in lines)
+            {
+                string name = line.Split(separator)[0];
+                int totalAmount = Int32.Parse(line.Split(separator)[1]);
+                _MealToAmount.Add(name, totalAmount);
+                foreach(var MG in DP.Groups)
+                {
+                    foreach(var M in MG.Meals)
+                    {
+                        if (M.Name.Equals(name))
+                        {
+                            M.TotalAmount = totalAmount;
+                            goto NextLine;
+                        }
+                    }
+                }
+            NextLine:
+                totalAmount = totalAmount; //just do anything to be able to jump here
+            }
+            return true;
+        }
     }
 }

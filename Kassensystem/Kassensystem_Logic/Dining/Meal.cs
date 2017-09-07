@@ -70,6 +70,10 @@ namespace Kassensystem_Logic.Dining
             {
                 return totalAmount;
             }
+            internal set
+            {
+                totalAmount = value;
+            }
         }
 
         private int totalHalfAmount;

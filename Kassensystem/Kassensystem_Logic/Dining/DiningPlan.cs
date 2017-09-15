@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kassensystem_Logic.Saving;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -89,6 +90,10 @@ namespace Kassensystem_Logic.Dining {
                 {
                     m.PayOrder();
                 }
+            }
+            if (FileIO.OrderOpen)
+            {
+                FileIO.saveOrders();
             }
         }
 

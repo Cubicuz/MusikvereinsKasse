@@ -9,26 +9,8 @@ using System.Web;
 namespace Kassensystem_Logic.Saving {
     public class FileIO {
 
-        private const char separator = ';';
-        private static string _OrderPath;
-        private static Dictionary<string, int> _MealToAmount;
 
-        public static string OrderFile
-        {
-            get
-            {
-                return _OrderPath;
-            }
-            set
-            {
-                if (value.Equals(_OrderPath))
-                {
-                    return;
-                }
-                _OrderPath = value;
-            }
-        }
-
+        #region DiningPlan
         public static DiningPlan LoadDiningPlan(string filePath) {
             XDocument doc = XDocument.Load(filePath);
             List<MealGroup> outMealList = new List<MealGroup>();
@@ -80,6 +62,34 @@ namespace Kassensystem_Logic.Saving {
             doc.Add(root);
             doc.Save(filePath);
         }
+        #endregion
+
+        #region Statistic
+
+        private const char separator = ';';
+        private static string _OrderPath;
+        private static bool _OrderOpen = false;
+        private static Dictionary<string, int> _MealToAmount;
+
+        public static bool OrderOpen
+        {
+            get
+            {
+                return _OrderOpen;
+            }
+        }
+
+        public static string OrderFilePath
+        {
+            get
+            {
+                return _OrderPath;
+            }
+            set
+            {
+                _OrderPath = value;
+            }
+        }
 
         public static void saveOrders()
         {
@@ -112,7 +122,8 @@ namespace Kassensystem_Logic.Saving {
                         MyFile.WriteLine(item.Key + separator + item.Value + separator);
                     }
                 }
-
+                _OrderPath = path;
+                _OrderOpen = true;
             }
         }
 
@@ -148,7 +159,10 @@ namespace Kassensystem_Logic.Saving {
             NextLine:
                 totalAmount = totalAmount; //just do anything to be able to jump here
             }
+            _OrderPath = path;
+            _OrderOpen = true;
             return true;
         }
     }
+    #endregion
 }

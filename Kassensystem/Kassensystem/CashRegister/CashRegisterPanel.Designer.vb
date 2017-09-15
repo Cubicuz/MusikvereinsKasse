@@ -49,10 +49,10 @@ Partial Class CashRegisterPanel
         Me.AcceptButton = New System.Windows.Forms.Button()
         Me.MainTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.TextBoxTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
-        Me.LabelGegeben = New System.Windows.Forms.Label()
-        Me.LabelRueck = New System.Windows.Forms.Label()
         Me.LabelPreis = New System.Windows.Forms.Label()
         Me.PriceTextBox = New System.Windows.Forms.TextBox()
+        Me.LabelGegeben = New System.Windows.Forms.Label()
+        Me.LabelRueck = New System.Windows.Forms.Label()
         Me.BillTableLayoutPanel.SuspendLayout()
         Me.NumeralTableLayoutPanel.SuspendLayout()
         Me.AcceptReturnTableLayoutPanel.SuspendLayout()
@@ -65,9 +65,9 @@ Partial Class CashRegisterPanel
         Me.MoneyInTextBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MoneyInTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MoneyInTextBox.Location = New System.Drawing.Point(3, 48)
+        Me.MoneyInTextBox.Location = New System.Drawing.Point(182, 200)
         Me.MoneyInTextBox.Name = "MoneyInTextBox"
-        Me.MoneyInTextBox.Size = New System.Drawing.Size(174, 40)
+        Me.MoneyInTextBox.Size = New System.Drawing.Size(173, 40)
         Me.MoneyInTextBox.TabIndex = 0
         Me.MoneyInTextBox.Text = "0"
         Me.MoneyInTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -77,10 +77,10 @@ Partial Class CashRegisterPanel
         Me.MoneyOutTextBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MoneyOutTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MoneyOutTextBox.Location = New System.Drawing.Point(3, 228)
+        Me.MoneyOutTextBox.Location = New System.Drawing.Point(361, 200)
         Me.MoneyOutTextBox.Name = "MoneyOutTextBox"
         Me.MoneyOutTextBox.ReadOnly = True
-        Me.MoneyOutTextBox.Size = New System.Drawing.Size(174, 40)
+        Me.MoneyOutTextBox.Size = New System.Drawing.Size(176, 40)
         Me.MoneyOutTextBox.TabIndex = 1
         Me.MoneyOutTextBox.Text = "0"
         Me.MoneyOutTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -106,15 +106,15 @@ Partial Class CashRegisterPanel
         Me.BillTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.BillTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.BillTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.BillTableLayoutPanel.Size = New System.Drawing.Size(150, 276)
+        Me.BillTableLayoutPanel.Size = New System.Drawing.Size(150, 394)
         Me.BillTableLayoutPanel.TabIndex = 3
         '
         'Euro100Button
         '
         Me.Euro100Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Euro100Button.Location = New System.Drawing.Point(3, 223)
+        Me.Euro100Button.Location = New System.Drawing.Point(3, 315)
         Me.Euro100Button.Name = "Euro100Button"
-        Me.Euro100Button.Size = New System.Drawing.Size(144, 50)
+        Me.Euro100Button.Size = New System.Drawing.Size(144, 76)
         Me.Euro100Button.TabIndex = 4
         Me.Euro100Button.Text = "100 €"
         Me.Euro100Button.UseVisualStyleBackColor = True
@@ -122,9 +122,9 @@ Partial Class CashRegisterPanel
         'Euro50Button
         '
         Me.Euro50Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Euro50Button.Location = New System.Drawing.Point(3, 168)
+        Me.Euro50Button.Location = New System.Drawing.Point(3, 237)
         Me.Euro50Button.Name = "Euro50Button"
-        Me.Euro50Button.Size = New System.Drawing.Size(144, 49)
+        Me.Euro50Button.Size = New System.Drawing.Size(144, 72)
         Me.Euro50Button.TabIndex = 3
         Me.Euro50Button.Text = "50 €"
         Me.Euro50Button.UseVisualStyleBackColor = True
@@ -132,9 +132,9 @@ Partial Class CashRegisterPanel
         'Euro20Button
         '
         Me.Euro20Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Euro20Button.Location = New System.Drawing.Point(3, 113)
+        Me.Euro20Button.Location = New System.Drawing.Point(3, 159)
         Me.Euro20Button.Name = "Euro20Button"
-        Me.Euro20Button.Size = New System.Drawing.Size(144, 49)
+        Me.Euro20Button.Size = New System.Drawing.Size(144, 72)
         Me.Euro20Button.TabIndex = 2
         Me.Euro20Button.Text = "20 €"
         Me.Euro20Button.UseVisualStyleBackColor = True
@@ -142,9 +142,9 @@ Partial Class CashRegisterPanel
         'Euro10Button
         '
         Me.Euro10Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Euro10Button.Location = New System.Drawing.Point(3, 58)
+        Me.Euro10Button.Location = New System.Drawing.Point(3, 81)
         Me.Euro10Button.Name = "Euro10Button"
-        Me.Euro10Button.Size = New System.Drawing.Size(144, 49)
+        Me.Euro10Button.Size = New System.Drawing.Size(144, 72)
         Me.Euro10Button.TabIndex = 1
         Me.Euro10Button.Text = "10 €"
         Me.Euro10Button.UseVisualStyleBackColor = True
@@ -154,7 +154,7 @@ Partial Class CashRegisterPanel
         Me.Euro5Button.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Euro5Button.Location = New System.Drawing.Point(3, 3)
         Me.Euro5Button.Name = "Euro5Button"
-        Me.Euro5Button.Size = New System.Drawing.Size(144, 49)
+        Me.Euro5Button.Size = New System.Drawing.Size(144, 72)
         Me.Euro5Button.TabIndex = 0
         Me.Euro5Button.Text = "5 €"
         Me.Euro5Button.UseVisualStyleBackColor = True
@@ -190,7 +190,7 @@ Partial Class CashRegisterPanel
         Me.NumeralTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.NumeralTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.NumeralTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.NumeralTableLayoutPanel.Size = New System.Drawing.Size(300, 276)
+        Me.NumeralTableLayoutPanel.Size = New System.Drawing.Size(300, 394)
         Me.NumeralTableLayoutPanel.TabIndex = 2
         '
         'NumDelButton
@@ -198,7 +198,7 @@ Partial Class CashRegisterPanel
         Me.NumDelButton.Dock = System.Windows.Forms.DockStyle.Fill
         Me.NumDelButton.Location = New System.Drawing.Point(3, 3)
         Me.NumDelButton.Name = "NumDelButton"
-        Me.NumDelButton.Size = New System.Drawing.Size(94, 49)
+        Me.NumDelButton.Size = New System.Drawing.Size(94, 72)
         Me.NumDelButton.TabIndex = 0
         Me.NumDelButton.Text = "entf"
         Me.NumDelButton.UseVisualStyleBackColor = True
@@ -206,9 +206,9 @@ Partial Class CashRegisterPanel
         'Num7Button
         '
         Me.Num7Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Num7Button.Location = New System.Drawing.Point(3, 58)
+        Me.Num7Button.Location = New System.Drawing.Point(3, 81)
         Me.Num7Button.Name = "Num7Button"
-        Me.Num7Button.Size = New System.Drawing.Size(94, 49)
+        Me.Num7Button.Size = New System.Drawing.Size(94, 72)
         Me.Num7Button.TabIndex = 2
         Me.Num7Button.Text = "7"
         Me.Num7Button.UseVisualStyleBackColor = True
@@ -216,9 +216,9 @@ Partial Class CashRegisterPanel
         'Num8Button
         '
         Me.Num8Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Num8Button.Location = New System.Drawing.Point(103, 58)
+        Me.Num8Button.Location = New System.Drawing.Point(103, 81)
         Me.Num8Button.Name = "Num8Button"
-        Me.Num8Button.Size = New System.Drawing.Size(94, 49)
+        Me.Num8Button.Size = New System.Drawing.Size(94, 72)
         Me.Num8Button.TabIndex = 3
         Me.Num8Button.Text = "8"
         Me.Num8Button.UseVisualStyleBackColor = True
@@ -226,9 +226,9 @@ Partial Class CashRegisterPanel
         'Num4Button
         '
         Me.Num4Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Num4Button.Location = New System.Drawing.Point(3, 113)
+        Me.Num4Button.Location = New System.Drawing.Point(3, 159)
         Me.Num4Button.Name = "Num4Button"
-        Me.Num4Button.Size = New System.Drawing.Size(94, 49)
+        Me.Num4Button.Size = New System.Drawing.Size(94, 72)
         Me.Num4Button.TabIndex = 4
         Me.Num4Button.Text = "4"
         Me.Num4Button.UseVisualStyleBackColor = True
@@ -236,9 +236,9 @@ Partial Class CashRegisterPanel
         'Num1Button
         '
         Me.Num1Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Num1Button.Location = New System.Drawing.Point(3, 168)
+        Me.Num1Button.Location = New System.Drawing.Point(3, 237)
         Me.Num1Button.Name = "Num1Button"
-        Me.Num1Button.Size = New System.Drawing.Size(94, 49)
+        Me.Num1Button.Size = New System.Drawing.Size(94, 72)
         Me.Num1Button.TabIndex = 5
         Me.Num1Button.Text = "1"
         Me.Num1Button.UseVisualStyleBackColor = True
@@ -246,9 +246,9 @@ Partial Class CashRegisterPanel
         'Num5Button
         '
         Me.Num5Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Num5Button.Location = New System.Drawing.Point(103, 113)
+        Me.Num5Button.Location = New System.Drawing.Point(103, 159)
         Me.Num5Button.Name = "Num5Button"
-        Me.Num5Button.Size = New System.Drawing.Size(94, 49)
+        Me.Num5Button.Size = New System.Drawing.Size(94, 72)
         Me.Num5Button.TabIndex = 6
         Me.Num5Button.Text = "5"
         Me.Num5Button.UseVisualStyleBackColor = True
@@ -256,9 +256,9 @@ Partial Class CashRegisterPanel
         'Num9Button
         '
         Me.Num9Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Num9Button.Location = New System.Drawing.Point(203, 58)
+        Me.Num9Button.Location = New System.Drawing.Point(203, 81)
         Me.Num9Button.Name = "Num9Button"
-        Me.Num9Button.Size = New System.Drawing.Size(94, 49)
+        Me.Num9Button.Size = New System.Drawing.Size(94, 72)
         Me.Num9Button.TabIndex = 7
         Me.Num9Button.Text = "9"
         Me.Num9Button.UseVisualStyleBackColor = True
@@ -266,9 +266,9 @@ Partial Class CashRegisterPanel
         'Num6Button
         '
         Me.Num6Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Num6Button.Location = New System.Drawing.Point(203, 113)
+        Me.Num6Button.Location = New System.Drawing.Point(203, 159)
         Me.Num6Button.Name = "Num6Button"
-        Me.Num6Button.Size = New System.Drawing.Size(94, 49)
+        Me.Num6Button.Size = New System.Drawing.Size(94, 72)
         Me.Num6Button.TabIndex = 8
         Me.Num6Button.Text = "6"
         Me.Num6Button.UseVisualStyleBackColor = True
@@ -276,9 +276,9 @@ Partial Class CashRegisterPanel
         'Num2Button
         '
         Me.Num2Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Num2Button.Location = New System.Drawing.Point(103, 168)
+        Me.Num2Button.Location = New System.Drawing.Point(103, 237)
         Me.Num2Button.Name = "Num2Button"
-        Me.Num2Button.Size = New System.Drawing.Size(94, 49)
+        Me.Num2Button.Size = New System.Drawing.Size(94, 72)
         Me.Num2Button.TabIndex = 9
         Me.Num2Button.Text = "2"
         Me.Num2Button.UseVisualStyleBackColor = True
@@ -286,9 +286,9 @@ Partial Class CashRegisterPanel
         'Num3Button
         '
         Me.Num3Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Num3Button.Location = New System.Drawing.Point(203, 168)
+        Me.Num3Button.Location = New System.Drawing.Point(203, 237)
         Me.Num3Button.Name = "Num3Button"
-        Me.Num3Button.Size = New System.Drawing.Size(94, 49)
+        Me.Num3Button.Size = New System.Drawing.Size(94, 72)
         Me.Num3Button.TabIndex = 10
         Me.Num3Button.Text = "3"
         Me.Num3Button.UseVisualStyleBackColor = True
@@ -297,9 +297,9 @@ Partial Class CashRegisterPanel
         '
         Me.NumeralTableLayoutPanel.SetColumnSpan(Me.Num0Button, 2)
         Me.Num0Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Num0Button.Location = New System.Drawing.Point(3, 223)
+        Me.Num0Button.Location = New System.Drawing.Point(3, 315)
         Me.Num0Button.Name = "Num0Button"
-        Me.Num0Button.Size = New System.Drawing.Size(194, 50)
+        Me.Num0Button.Size = New System.Drawing.Size(194, 76)
         Me.Num0Button.TabIndex = 11
         Me.Num0Button.Text = "0"
         Me.Num0Button.UseVisualStyleBackColor = True
@@ -307,9 +307,9 @@ Partial Class CashRegisterPanel
         'NumDotButton
         '
         Me.NumDotButton.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NumDotButton.Location = New System.Drawing.Point(203, 223)
+        Me.NumDotButton.Location = New System.Drawing.Point(203, 315)
         Me.NumDotButton.Name = "NumDotButton"
-        Me.NumDotButton.Size = New System.Drawing.Size(94, 50)
+        Me.NumDotButton.Size = New System.Drawing.Size(94, 76)
         Me.NumDotButton.TabIndex = 12
         Me.NumDotButton.Text = ","
         Me.NumDotButton.UseVisualStyleBackColor = True
@@ -320,7 +320,7 @@ Partial Class CashRegisterPanel
         Me.NumClearButton.Dock = System.Windows.Forms.DockStyle.Fill
         Me.NumClearButton.Location = New System.Drawing.Point(103, 3)
         Me.NumClearButton.Name = "NumClearButton"
-        Me.NumClearButton.Size = New System.Drawing.Size(194, 49)
+        Me.NumClearButton.Size = New System.Drawing.Size(194, 72)
         Me.NumClearButton.TabIndex = 13
         Me.NumClearButton.Text = "clear"
         Me.NumClearButton.UseVisualStyleBackColor = True
@@ -340,7 +340,7 @@ Partial Class CashRegisterPanel
         Me.AcceptReturnTableLayoutPanel.RowCount = 2
         Me.AcceptReturnTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.AcceptReturnTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.0!))
-        Me.AcceptReturnTableLayoutPanel.Size = New System.Drawing.Size(250, 276)
+        Me.AcceptReturnTableLayoutPanel.Size = New System.Drawing.Size(250, 394)
         Me.AcceptReturnTableLayoutPanel.TabIndex = 4
         '
         'ReturnButton
@@ -349,7 +349,7 @@ Partial Class CashRegisterPanel
         Me.ReturnButton.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ReturnButton.Location = New System.Drawing.Point(3, 3)
         Me.ReturnButton.Name = "ReturnButton"
-        Me.ReturnButton.Size = New System.Drawing.Size(244, 63)
+        Me.ReturnButton.Size = New System.Drawing.Size(244, 92)
         Me.ReturnButton.TabIndex = 0
         Me.ReturnButton.Text = "löschen"
         Me.ReturnButton.UseVisualStyleBackColor = False
@@ -358,11 +358,11 @@ Partial Class CashRegisterPanel
         '
         Me.AcceptButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.AcceptButton.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AcceptButton.Location = New System.Drawing.Point(3, 72)
+        Me.AcceptButton.Location = New System.Drawing.Point(3, 101)
         Me.AcceptButton.Name = "AcceptButton"
-        Me.AcceptButton.Size = New System.Drawing.Size(244, 201)
+        Me.AcceptButton.Size = New System.Drawing.Size(244, 290)
         Me.AcceptButton.TabIndex = 1
-        Me.AcceptButton.Text = "bezahlen"
+        Me.AcceptButton.Text = "registrieren"
         Me.AcceptButton.UseVisualStyleBackColor = False
         '
         'MainTableLayoutPanel
@@ -382,8 +382,8 @@ Partial Class CashRegisterPanel
         Me.MainTableLayoutPanel.Location = New System.Drawing.Point(3, 3)
         Me.MainTableLayoutPanel.Name = "MainTableLayoutPanel"
         Me.MainTableLayoutPanel.RowCount = 1
-        Me.MainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.MainTableLayoutPanel.Size = New System.Drawing.Size(904, 282)
+        Me.MainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 400.0!))
+        Me.MainTableLayoutPanel.Size = New System.Drawing.Size(1264, 400)
         Me.MainTableLayoutPanel.TabIndex = 1
         '
         'TextBoxTableLayoutPanel
@@ -392,60 +392,33 @@ Partial Class CashRegisterPanel
         Me.TextBoxTableLayoutPanel.AutoScroll = True
         Me.TextBoxTableLayoutPanel.AutoSize = True
         Me.TextBoxTableLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.TextBoxTableLayoutPanel.ColumnCount = 1
-        Me.TextBoxTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TextBoxTableLayoutPanel.Controls.Add(Me.LabelGegeben, 0, 0)
-        Me.TextBoxTableLayoutPanel.Controls.Add(Me.MoneyOutTextBox, 0, 5)
-        Me.TextBoxTableLayoutPanel.Controls.Add(Me.LabelRueck, 0, 4)
-        Me.TextBoxTableLayoutPanel.Controls.Add(Me.MoneyInTextBox, 0, 1)
-        Me.TextBoxTableLayoutPanel.Controls.Add(Me.LabelPreis, 0, 2)
-        Me.TextBoxTableLayoutPanel.Controls.Add(Me.PriceTextBox, 0, 3)
+        Me.TextBoxTableLayoutPanel.ColumnCount = 3
+        Me.TextBoxTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TextBoxTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TextBoxTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TextBoxTableLayoutPanel.Controls.Add(Me.LabelGegeben, 1, 0)
+        Me.TextBoxTableLayoutPanel.Controls.Add(Me.MoneyInTextBox, 1, 1)
+        Me.TextBoxTableLayoutPanel.Controls.Add(Me.LabelPreis, 0, 0)
+        Me.TextBoxTableLayoutPanel.Controls.Add(Me.LabelRueck, 2, 0)
+        Me.TextBoxTableLayoutPanel.Controls.Add(Me.MoneyOutTextBox, 2, 1)
+        Me.TextBoxTableLayoutPanel.Controls.Add(Me.PriceTextBox, 0, 1)
         Me.TextBoxTableLayoutPanel.Location = New System.Drawing.Point(721, 3)
         Me.TextBoxTableLayoutPanel.MinimumSize = New System.Drawing.Size(180, 0)
         Me.TextBoxTableLayoutPanel.Name = "TextBoxTableLayoutPanel"
-        Me.TextBoxTableLayoutPanel.RowCount = 6
-        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TextBoxTableLayoutPanel.Size = New System.Drawing.Size(180, 276)
+        Me.TextBoxTableLayoutPanel.RowCount = 2
+        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TextBoxTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TextBoxTableLayoutPanel.Size = New System.Drawing.Size(540, 394)
         Me.TextBoxTableLayoutPanel.TabIndex = 0
-        '
-        'LabelGegeben
-        '
-        Me.LabelGegeben.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.LabelGegeben.AutoSize = True
-        Me.LabelGegeben.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelGegeben.Location = New System.Drawing.Point(3, 12)
-        Me.LabelGegeben.Name = "LabelGegeben"
-        Me.LabelGegeben.Size = New System.Drawing.Size(142, 33)
-        Me.LabelGegeben.TabIndex = 3
-        Me.LabelGegeben.Text = "Gegeben:"
-        Me.LabelGegeben.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'LabelRueck
-        '
-        Me.LabelRueck.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.LabelRueck.AutoSize = True
-        Me.LabelRueck.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelRueck.Location = New System.Drawing.Point(3, 192)
-        Me.LabelRueck.Name = "LabelRueck"
-        Me.LabelRueck.Size = New System.Drawing.Size(145, 33)
-        Me.LabelRueck.TabIndex = 2
-        Me.LabelRueck.Text = "Rückgeld:"
-        Me.LabelRueck.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'LabelPreis
         '
-        Me.LabelPreis.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.LabelPreis.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.LabelPreis.AutoSize = True
-        Me.LabelPreis.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.LabelPreis.Location = New System.Drawing.Point(3, 102)
+        Me.LabelPreis.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.0!)
+        Me.LabelPreis.Location = New System.Drawing.Point(30, 153)
         Me.LabelPreis.Name = "LabelPreis"
-        Me.LabelPreis.Size = New System.Drawing.Size(90, 33)
+        Me.LabelPreis.Size = New System.Drawing.Size(118, 44)
         Me.LabelPreis.TabIndex = 4
         Me.LabelPreis.Text = "Preis:"
         Me.LabelPreis.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -455,13 +428,37 @@ Partial Class CashRegisterPanel
         Me.PriceTextBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PriceTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PriceTextBox.Location = New System.Drawing.Point(3, 138)
+        Me.PriceTextBox.Location = New System.Drawing.Point(3, 200)
         Me.PriceTextBox.Name = "PriceTextBox"
         Me.PriceTextBox.ReadOnly = True
-        Me.PriceTextBox.Size = New System.Drawing.Size(174, 40)
+        Me.PriceTextBox.Size = New System.Drawing.Size(173, 40)
         Me.PriceTextBox.TabIndex = 5
         Me.PriceTextBox.Text = "0"
         Me.PriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'LabelGegeben
+        '
+        Me.LabelGegeben.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.LabelGegeben.AutoSize = True
+        Me.LabelGegeben.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelGegeben.Location = New System.Drawing.Point(190, 160)
+        Me.LabelGegeben.Name = "LabelGegeben"
+        Me.LabelGegeben.Size = New System.Drawing.Size(156, 37)
+        Me.LabelGegeben.TabIndex = 3
+        Me.LabelGegeben.Text = "Gegeben:"
+        Me.LabelGegeben.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'LabelRueck
+        '
+        Me.LabelRueck.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.LabelRueck.AutoSize = True
+        Me.LabelRueck.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelRueck.Location = New System.Drawing.Point(370, 160)
+        Me.LabelRueck.Name = "LabelRueck"
+        Me.LabelRueck.Size = New System.Drawing.Size(158, 37)
+        Me.LabelRueck.TabIndex = 2
+        Me.LabelRueck.Text = "Rückgeld:"
+        Me.LabelRueck.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'CashRegisterPanel
         '
@@ -472,7 +469,7 @@ Partial Class CashRegisterPanel
         Me.Controls.Add(Me.MainTableLayoutPanel)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "CashRegisterPanel"
-        Me.Size = New System.Drawing.Size(910, 288)
+        Me.Size = New System.Drawing.Size(1270, 406)
         Me.BillTableLayoutPanel.ResumeLayout(False)
         Me.NumeralTableLayoutPanel.ResumeLayout(False)
         Me.AcceptReturnTableLayoutPanel.ResumeLayout(False)

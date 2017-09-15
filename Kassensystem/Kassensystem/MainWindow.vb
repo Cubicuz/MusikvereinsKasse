@@ -20,8 +20,7 @@ Public Class MainWindow
         'FileIO.loadDiningPlan("C:\Users\PegaMenis\ownCloud\Musikverein\Kassensystem\exampleDiningPlan.xml")
     End Sub
 
-    Private Sub ÖffnenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ÖffnenToolStripMenuItem.Click
-    End Sub
+
 
     Private Sub CloseProject()
         If MainTableLayoutPanel.Controls.Contains(_DiningPlanPanel) Then
@@ -29,22 +28,54 @@ Public Class MainWindow
         End If
     End Sub
 
-    Private Sub SpeichernToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SpeichernToolStripMenuItem.Click
+    Private Sub LoadStatisticsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadStatisticsToolStripMenuItem.Click
+        Dim fd As OpenFileDialog = New OpenFileDialog()
+        fd.Title = "Statistik laden"
+        fd.InitialDirectory = SpecialDirectories.Desktop
+        fd.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*"
+        fd.FilterIndex = 1
+        fd.RestoreDirectory = True
+        If fd.ShowDialog() = DialogResult.OK Then
+            Try
+                If Not FileIO.loadOrders(fd.FileName) Then
+                    MsgBox("Es muss zuerst ein Menüplan geöffnet werden")
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
 
-        FileIO.saveOrders()
+        End If
     End Sub
 
-    Private Sub SpeichernUnterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SpeichernUnterToolStripMenuItem.Click
+
+    Private Sub SaveStatisticToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveStatisticToolStripMenuItem.Click
+        Try
+            If FileIO.OrderOpen Then
+                FileIO.saveOrders()
+            Else
+                SaveStatisticUnderToolStripMenuItem_Click(Nothing, Nothing)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SaveStatisticUnderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveStatisticUnderToolStripMenuItem.Click
 
         Dim fd As SaveFileDialog = New SaveFileDialog()
         fd.Title = "Speichern"
         fd.InitialDirectory = SpecialDirectories.Desktop
-        fd.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*"
+        fd.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*"
         fd.FilterIndex = 1
         fd.RestoreDirectory = True
         If fd.ShowDialog() = DialogResult.OK Then
-            FileIO.OrderFile = fd.FileName
-            FileIO.saveOrders()
+            FileIO.OrderFilePath = fd.FileName
+            Try
+                FileIO.saveOrders()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
         End If
 
     End Sub
@@ -88,4 +119,5 @@ Public Class MainWindow
             End If
         End If
     End Sub
+
 End Class

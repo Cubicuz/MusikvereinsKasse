@@ -155,6 +155,7 @@ Public Class CashRegisterPanel
         End If
     End Sub
 
+
 #End Region
 
 End Class

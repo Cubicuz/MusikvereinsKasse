@@ -1,125 +1,120 @@
 ﻿<diningPlan>
-  
+  <!-- Getränke -->
+  <group name="Getränke" color="#a3ddff" tab="Trinken">
+    <meal name="1l Wein">
+      <price>9,00</price>
+    </meal>
+    <meal name="1/4 wein">
+      <price>2,50</price>
+    </meal>
+    <meal name="0,75l Auswahlwein">
+      <price>11,00</price>
+    </meal>
+    <meal name="1/4 Auswahlwein">
+      <price>4,00</price>
+    </meal>
+    <meal name="Weinschorle">
+      <price>2,00</price>
+    </meal>
+    <meal name="0,5l Sprudel">
+      <price>1,50</price>
+    </meal>
+    <meal name="Cola/Fanta/Mezzo">
+      <price>1,50</price>
+    </meal>
+    <meal name="Apfelschorle">
+      <price>2,00</price>
+    </meal>
+    <meal name="0,75l Secco">
+      <price>12,00</price>
+    </meal>
+    <meal name="0,1l Secco">
+      <price>2,00</price>
+    </meal>
+    <meal name="2cl Obstler">
+      <price>1,50</price>
+    </meal>
+    <meal name="2cl Willy Birnenbrand">
+      <price>2,00</price>
+    </meal>
+    <meal name="2cl Liköre">
+      <price>2,00</price>
+    </meal>
+  </group>
+
   <!-- warme Speißen -->
 	<group name="Essen" color="orange" tab="Essen">
-    <meal name="Besenteller">
-      <price>6,00</price>
-      <halfPrice>4,50</halfPrice>
+    <meal name="Schlachtplatte/Brot">
+      <price>5,00</price>
     </meal>
-    <meal name="Besentoast">
-      <price>4,00</price>
-      <halfPrice>2,50</halfPrice>
+    <meal name="Schlachtplatte/Kraut">
+      <price>5,50</price>
+    </meal>
+    <meal name="Salzfleisch/Brot">
+      <price>5,00</price>
+    </meal>
+    <meal name="Salzfleisch/Kraut">
+      <price>5,50</price>
     </meal>
     <meal name="Bratwurst/Brot">
       <price>5,00</price>
-      <halfPrice>3,00</halfPrice>
     </meal>
     <meal name="Bratwurst/Kraut">
-      <price>6,00</price>
-      <halfPrice>4,00</halfPrice>
+      <price>5,50</price>
     </meal>
     <meal name="Maultaschen">
       <price>4,00</price>
     </meal>
-    <meal name="Mittagstisch(so.)">
-      <price>7,00</price>
-    </meal>
-    <meal name="Portion Spätzle">
-      <price>2,00</price>
+    <meal name="Besenteller">
+      <price>5,50</price>
     </meal>
     <meal name="Portion Kraut">
+      <price>1,50</price>
+    </meal>
+    <meal name="Kartoffelsalat">
       <price>2,00</price>
     </meal>
-    <meal name="Salzfleisch/Brot">
-      <price>5,00</price>
-      <halfPrice>3,00</halfPrice>
-    </meal>
-    <meal name="Salzfleisch/Kraut">
-      <price>6,00</price>
-      <halfPrice>4,00</halfPrice>
-    </meal>
-    <meal name="Schlachtplatte/Brot">
-      <price>7,00</price>
-      <halfPrice>5,50</halfPrice>
-    </meal>
-    <meal name="Schlachtplatte/Kraut">
-      <price>6,00</price>
-      <halfPrice>4,50</halfPrice>
-    </meal>
-    <meal name="Schnitzel/Brot">
-      <price>5,00</price>
-    </meal>
-    <meal name="Schnitzel/Kartoffelsalat">
-      <price>6,00</price>
-    </meal>
-    <meal name="Siedfleisch">
-      <price>3,00</price>
-      <halfPrice>1,50</halfPrice>
-    </meal>
+
+
   </group>
   
   <!-- kalte Speißen -->
 	<group name="Fesper" color="yellow" tab="Essen">
-		<meal name="Brätbrot">
-			<price>3,00</price>
-		</meal>
-    <meal name="Kartoffelsalat">
-      <price>2,00</price>
+    <meal name="Besentoast">
+      <price>4,50</price>
     </meal>
+    <meal name="Rauchfleischbrot">
+      <price>4,00</price>
+    </meal>
+    <meal name="Brätbrot">
+			<price>3,50</price>
+		</meal>
     <meal name="Käsebrot">
       <price>3,00</price>
     </meal>
     <meal name="Käsewürfel">
       <price>3,00</price>
     </meal>
-    <meal name="Rauchfleischbrot">
-      <price>3,00</price>
-    </meal>
     <meal name="Schmalzbrot">
-      <price>3,00</price>
+      <price>2,50</price>
     </meal>
   </group>
-  
-  <!-- Getränke -->
-	<group name="Getränke" color="#a3ddff" tab="Trinken">
-    <meal name="0,1lSekt">
-      <price>1,50</price>
+  <group name="Sonntag" color="orange" tab="Essen">
+    <meal name="Mittagstisch(so.)">
+      <price>9,50</price>
     </meal>
-    <meal name="1/4 wein">
+    <meal name="Spätzle mit Soße">
       <price>2,50</price>
     </meal>
-    <meal name="Apfelschorle">
-      <price>2,00</price>
+    <meal name="Siedfleisch">
+      <price>6,50</price>
     </meal>
-    <meal name="Auswahlwein 0,25l">
-      <price>3,00</price>
-    </meal>
-    <meal name="Auswahlwein 0,75l">
-      <price>8,00</price>
-    </meal>
-    <meal name="Cola/Fanta/Mezzo">
-      <price>1,80</price>
-    </meal>
-    <meal name="Flasche Sekt">
-      <price>9,00</price>
-    </meal>
-    <meal name="Krug Wein">
-			<price>9,00</price>
-		</meal>
-    <meal name="Liköre">
-      <price>1,00</price>
-    </meal>
-    <meal name="Obstler">
+    <meal name="Kaffee">
       <price>1,50</price>
     </meal>
-    <meal name="Sprudel">
-      <price>1,00</price>
-    </meal>
-    <meal name="Weinschorle">
-      <price>2,50</price>
-    </meal>
-    <meal name="Willy Birnenbrand">
+    <meal name="Kuchen">
       <price>1,50</price>
     </meal>
+
   </group>
 </diningPlan>

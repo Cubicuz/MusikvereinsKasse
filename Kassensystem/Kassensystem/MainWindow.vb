@@ -1,9 +1,11 @@
 ﻿Imports Kassensystem_Logic.Saving
 Imports Kassensystem_Logic.Dining
 Imports Microsoft.VisualBasic.FileIO
+Imports System.IO
 
 Public Class MainWindow
-
+    Private Shared statisticsBasePath = SpecialDirectories.Desktop
+    Private Shared diningplanPath = SpecialDirectories.Desktop & "\Menueplan.xml"
     Private isSessionOpen As Boolean = False
     Private _DiningPlanPanel As DiningPlanPanel
 
@@ -11,6 +13,10 @@ Public Class MainWindow
 
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
+        OpenStandartDiningPlan()
+        If isSessionOpen Then
+            EvaluateStatisticsPath()
+        End If
         'Dim DNP As DiningPlan = FileIO.LoadDiningPlan("exampleDiningPlan.xml") 'New DiningPlan(MG)
         'DiningPlan.DiningPlanInstance = DNP
         'Dim DNPP As DiningPlanPanel = New DiningPlanPanel(DNP)
@@ -47,6 +53,39 @@ Public Class MainWindow
         End If
     End Sub
 
+    Public Function EvaluateStatisticsPath() As String
+        Dim time = DateTime.Now
+        If time.Hour < 9 Then
+            time = time.AddDays(-1)
+        End If
+        Dim culture = New System.Globalization.CultureInfo("de-DE")
+        Dim germanDay As String = culture.DateTimeFormat.GetDayName(time.DayOfWeek)
+        Dim pathToStatistics = statisticsBasePath & "\" & time.Year & "\" & germanDay & ".csv"
+        If File.Exists(pathToStatistics) Then
+            FileIO.loadOrders(pathToStatistics)
+        Else
+            FileIO.saveOrders(pathToStatistics)
+        End If
+        Return pathToStatistics
+    End Function
+
+    Public Sub OpenStandartDiningPlan()
+        If File.Exists(diningplanPath) Then
+            Try
+
+                DiningPlan.DiningPlanInstance = FileIO.LoadDiningPlan(diningplanPath)
+                _DiningPlanPanel = New DiningPlanPanel(DiningPlan.DiningPlanInstance)
+                CurrentOrderPanel1.InitializeCurrentOrderPanel(DiningPlan.DiningPlanInstance)
+                MainTableLayoutPanel.Controls.Add(_DiningPlanPanel, 0, 0)
+                _DiningPlanPanel.Dock = DockStyle.Fill
+                isSessionOpen = True
+            Catch ex As Exception
+                MsgBox("fehler beim laden der Datei" & vbNewLine & ex.Message)
+            End Try
+        Else
+            LoadingDiningPlanToolStripMenuItem_Click()
+        End If
+    End Sub
 
     Private Sub SaveStatisticToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveStatisticToolStripMenuItem.Click
         Try
@@ -80,7 +119,7 @@ Public Class MainWindow
 
     End Sub
 
-    Private Sub LoadingDiningPlanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadDiningPlanToolStripMenuItem.Click
+    Private Sub LoadingDiningPlanToolStripMenuItem_Click(Optional sender As Object = Nothing, Optional e As EventArgs = Nothing) Handles LoadDiningPlanToolStripMenuItem.Click
         If isSessionOpen Then
             'TODO: ask to save Session
         End If
@@ -106,7 +145,7 @@ Public Class MainWindow
 
     End Sub
 
-    Private Sub SaveDiningPlanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveDiningPlanToolStripMenuItem.Click
+    Private Sub SaveDiningPlanToolStripMenuItem_Click(sender As Object, e As EventArgs)
         If DiningPlan.DiningPlanInstance IsNot Nothing Then
             Dim fd As SaveFileDialog = New SaveFileDialog()
             fd.Title = "Menüplan speichern"

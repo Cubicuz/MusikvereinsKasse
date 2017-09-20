@@ -23,14 +23,8 @@ Partial Class MainWindow
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.DateiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BeendenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenüplanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoadDiningPlanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SaveDiningPlanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SaveDiningPlanUnderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditDiningPlanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatistikToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoadStatisticsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveStatisticToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,7 +39,7 @@ Partial Class MainWindow
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateiToolStripMenuItem, Me.MenüplanToolStripMenuItem, Me.StatistikToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenüplanToolStripMenuItem, Me.StatistikToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(9, 3, 0, 3)
@@ -53,27 +47,9 @@ Partial Class MainWindow
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'DateiToolStripMenuItem
-        '
-        Me.DateiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.BeendenToolStripMenuItem})
-        Me.DateiToolStripMenuItem.Name = "DateiToolStripMenuItem"
-        Me.DateiToolStripMenuItem.Size = New System.Drawing.Size(65, 29)
-        Me.DateiToolStripMenuItem.Text = "Datei"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(207, 6)
-        '
-        'BeendenToolStripMenuItem
-        '
-        Me.BeendenToolStripMenuItem.Name = "BeendenToolStripMenuItem"
-        Me.BeendenToolStripMenuItem.Size = New System.Drawing.Size(210, 30)
-        Me.BeendenToolStripMenuItem.Text = "Beenden"
-        '
         'MenüplanToolStripMenuItem
         '
-        Me.MenüplanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadDiningPlanToolStripMenuItem, Me.SaveDiningPlanToolStripMenuItem, Me.SaveDiningPlanUnderToolStripMenuItem, Me.EditDiningPlanToolStripMenuItem1})
+        Me.MenüplanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadDiningPlanToolStripMenuItem})
         Me.MenüplanToolStripMenuItem.Name = "MenüplanToolStripMenuItem"
         Me.MenüplanToolStripMenuItem.Size = New System.Drawing.Size(103, 29)
         Me.MenüplanToolStripMenuItem.Text = "Menüplan"
@@ -81,26 +57,8 @@ Partial Class MainWindow
         'LoadDiningPlanToolStripMenuItem
         '
         Me.LoadDiningPlanToolStripMenuItem.Name = "LoadDiningPlanToolStripMenuItem"
-        Me.LoadDiningPlanToolStripMenuItem.Size = New System.Drawing.Size(219, 30)
+        Me.LoadDiningPlanToolStripMenuItem.Size = New System.Drawing.Size(210, 30)
         Me.LoadDiningPlanToolStripMenuItem.Text = "Laden"
-        '
-        'SaveDiningPlanToolStripMenuItem
-        '
-        Me.SaveDiningPlanToolStripMenuItem.Name = "SaveDiningPlanToolStripMenuItem"
-        Me.SaveDiningPlanToolStripMenuItem.Size = New System.Drawing.Size(219, 30)
-        Me.SaveDiningPlanToolStripMenuItem.Text = "Speichern"
-        '
-        'SaveDiningPlanUnderToolStripMenuItem
-        '
-        Me.SaveDiningPlanUnderToolStripMenuItem.Name = "SaveDiningPlanUnderToolStripMenuItem"
-        Me.SaveDiningPlanUnderToolStripMenuItem.Size = New System.Drawing.Size(219, 30)
-        Me.SaveDiningPlanUnderToolStripMenuItem.Text = "Speichern unter"
-        '
-        'EditDiningPlanToolStripMenuItem1
-        '
-        Me.EditDiningPlanToolStripMenuItem1.Name = "EditDiningPlanToolStripMenuItem1"
-        Me.EditDiningPlanToolStripMenuItem1.Size = New System.Drawing.Size(219, 30)
-        Me.EditDiningPlanToolStripMenuItem1.Text = "Editieren"
         '
         'StatistikToolStripMenuItem
         '
@@ -191,17 +149,11 @@ Partial Class MainWindow
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents DateiToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
-    Friend WithEvents BeendenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MenüplanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoadDiningPlanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SaveDiningPlanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EditDiningPlanToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents MainTableLayoutPanel As TableLayoutPanel
     Friend WithEvents CashRegisterPanel1 As CashRegisterPanel
     Friend WithEvents CurrentOrderPanel1 As CurrentOrderPanel
-    Friend WithEvents SaveDiningPlanUnderToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StatistikToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoadStatisticsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SaveStatisticToolStripMenuItem As ToolStripMenuItem

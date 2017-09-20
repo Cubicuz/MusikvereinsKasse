@@ -115,6 +115,13 @@ namespace Kassensystem_Logic.Saving {
                         }
                     }
                 }
+                if (!File.Exists(path))
+                {
+                    if (!Directory.Exists(Path.GetDirectoryName(path)))
+                    {
+                        Directory.CreateDirectory(Path.GetDirectoryName(path));
+                    }
+                }
                 using (var MyFile = new System.IO.StreamWriter(path, false))
                 {
                     foreach (var item in _MealToAmount)

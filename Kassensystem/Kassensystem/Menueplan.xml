@@ -1,4 +1,80 @@
 ﻿<diningPlan>
+
+  <!-- warme Speißen -->
+  <group name="Essen" color="orange" tab="Essen">
+    <meal name="Schlachtplatte/Brot">
+      <price>5,00</price>
+    </meal>
+    <meal name="Schlachtplatte/Kraut">
+      <price>5,50</price>
+    </meal>
+    <meal name="Salzfleisch/Brot">
+      <price>5,00</price>
+    </meal>
+    <meal name="Salzfleisch/Kraut">
+      <price>5,50</price>
+    </meal>
+    <meal name="Bratwurst/Brot">
+      <price>5,00</price>
+    </meal>
+    <meal name="Bratwurst/Kraut">
+      <price>5,50</price>
+    </meal>
+    <meal name="Maultaschen">
+      <price>4,00</price>
+    </meal>
+    <meal name="Besenteller">
+      <price>5,50</price>
+    </meal>
+    <meal name="Portion Kraut">
+      <price>1,50</price>
+    </meal>
+    <meal name="Kartoffelsalat">
+      <price>2,00</price>
+    </meal>
+
+
+  </group>
+
+  <!-- kalte Speißen -->
+  <group name="Fesper" color="yellow" tab="Essen">
+    <meal name="Besentoast">
+      <price>4,50</price>
+    </meal>
+    <meal name="Rauchfleischbrot">
+      <price>4,00</price>
+    </meal>
+    <meal name="Brätbrot">
+      <price>3,50</price>
+    </meal>
+    <meal name="Käsebrot">
+      <price>3,00</price>
+    </meal>
+    <meal name="Käsewürfel">
+      <price>3,00</price>
+    </meal>
+    <meal name="Schmalzbrot">
+      <price>2,50</price>
+    </meal>
+  </group>
+  <group name="Sonntag" color="#aaffaa" tab="Essen">
+    <meal name="Mittagstisch(so.)">
+      <price>9,50</price>
+    </meal>
+    <meal name="Spätzle mit Soße">
+      <price>2,50</price>
+    </meal>
+    <meal name="Siedfleisch">
+      <price>6,50</price>
+    </meal>
+    <meal name="Kaffee">
+      <price>1,50</price>
+    </meal>
+    <meal name="Kuchen">
+      <price>1,50</price>
+    </meal>
+
+  </group>
   <!-- Getränke -->
   <group name="Getränke" color="#a3ddff" tab="Trinken">
     <meal name="1l Wein">
@@ -41,80 +117,9 @@
       <price>2,00</price>
     </meal>
   </group>
-
-  <!-- warme Speißen -->
-	<group name="Essen" color="orange" tab="Essen">
-    <meal name="Schlachtplatte/Brot">
-      <price>5,00</price>
-    </meal>
-    <meal name="Schlachtplatte/Kraut">
-      <price>5,50</price>
-    </meal>
-    <meal name="Salzfleisch/Brot">
-      <price>5,00</price>
-    </meal>
-    <meal name="Salzfleisch/Kraut">
-      <price>5,50</price>
-    </meal>
-    <meal name="Bratwurst/Brot">
-      <price>5,00</price>
-    </meal>
-    <meal name="Bratwurst/Kraut">
-      <price>5,50</price>
-    </meal>
-    <meal name="Maultaschen">
-      <price>4,00</price>
-    </meal>
-    <meal name="Besenteller">
-      <price>5,50</price>
-    </meal>
-    <meal name="Portion Kraut">
-      <price>1,50</price>
-    </meal>
-    <meal name="Kartoffelsalat">
+  <group name="Sonstiges" color="#aaaaaa" tab="Trinken">
+    <meal name="Verpackung 2€">
       <price>2,00</price>
     </meal>
-
-
-  </group>
-  
-  <!-- kalte Speißen -->
-	<group name="Fesper" color="yellow" tab="Essen">
-    <meal name="Besentoast">
-      <price>4,50</price>
-    </meal>
-    <meal name="Rauchfleischbrot">
-      <price>4,00</price>
-    </meal>
-    <meal name="Brätbrot">
-			<price>3,50</price>
-		</meal>
-    <meal name="Käsebrot">
-      <price>3,00</price>
-    </meal>
-    <meal name="Käsewürfel">
-      <price>3,00</price>
-    </meal>
-    <meal name="Schmalzbrot">
-      <price>2,50</price>
-    </meal>
-  </group>
-  <group name="Sonntag" color="orange" tab="Essen">
-    <meal name="Mittagstisch(so.)">
-      <price>9,50</price>
-    </meal>
-    <meal name="Spätzle mit Soße">
-      <price>2,50</price>
-    </meal>
-    <meal name="Siedfleisch">
-      <price>6,50</price>
-    </meal>
-    <meal name="Kaffee">
-      <price>1,50</price>
-    </meal>
-    <meal name="Kuchen">
-      <price>1,50</price>
-    </meal>
-
   </group>
 </diningPlan>

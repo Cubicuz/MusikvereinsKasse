@@ -66,8 +66,8 @@ Partial Class MealControl
         Me.NameLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.NameLabel.AutoSize = True
         Me.NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameLabel.Location = New System.Drawing.Point(35, 39)
-        Me.NameLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.NameLabel.Location = New System.Drawing.Point(37, 39)
+        Me.NameLabel.Margin = New System.Windows.Forms.Padding(0)
         Me.NameLabel.Name = "NameLabel"
         Me.NameLabel.Size = New System.Drawing.Size(102, 32)
         Me.NameLabel.TabIndex = 3
@@ -155,14 +155,14 @@ Partial Class MealControl
         Me.FullMealTableLayoutPanel.Controls.Add(Me.FullMealComboBox, 0, 1)
         Me.FullMealTableLayoutPanel.Controls.Add(Me.FullMealUpButton, 0, 0)
         Me.FullMealTableLayoutPanel.Controls.Add(Me.FullMealDownButton, 0, 2)
-        Me.FullMealTableLayoutPanel.Location = New System.Drawing.Point(173, 0)
+        Me.FullMealTableLayoutPanel.Location = New System.Drawing.Point(177, 0)
         Me.FullMealTableLayoutPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.FullMealTableLayoutPanel.Name = "FullMealTableLayoutPanel"
         Me.FullMealTableLayoutPanel.RowCount = 3
         Me.FullMealTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.FullMealTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.FullMealTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.FullMealTableLayoutPanel.Size = New System.Drawing.Size(68, 110)
+        Me.FullMealTableLayoutPanel.Size = New System.Drawing.Size(64, 110)
         Me.FullMealTableLayoutPanel.TabIndex = 4
         '
         'FullMealComboBox
@@ -171,8 +171,8 @@ Partial Class MealControl
         Me.FullMealComboBox.FormattingEnabled = True
         Me.FullMealComboBox.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.FullMealComboBox.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.FullMealComboBox.Location = New System.Drawing.Point(5, 41)
-        Me.FullMealComboBox.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.FullMealComboBox.Location = New System.Drawing.Point(1, 41)
+        Me.FullMealComboBox.Margin = New System.Windows.Forms.Padding(0, 0, 4, 0)
         Me.FullMealComboBox.MaxDropDownItems = 11
         Me.FullMealComboBox.Name = "FullMealComboBox"
         Me.FullMealComboBox.Size = New System.Drawing.Size(58, 28)
@@ -182,8 +182,8 @@ Partial Class MealControl
         'FullMealUpButton
         '
         Me.FullMealUpButton.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FullMealUpButton.Location = New System.Drawing.Point(4, 5)
-        Me.FullMealUpButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.FullMealUpButton.Location = New System.Drawing.Point(0, 5)
+        Me.FullMealUpButton.Margin = New System.Windows.Forms.Padding(0, 5, 4, 5)
         Me.FullMealUpButton.Name = "FullMealUpButton"
         Me.FullMealUpButton.Size = New System.Drawing.Size(60, 31)
         Me.FullMealUpButton.TabIndex = 3
@@ -194,8 +194,8 @@ Partial Class MealControl
         'FullMealDownButton
         '
         Me.FullMealDownButton.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FullMealDownButton.Location = New System.Drawing.Point(4, 74)
-        Me.FullMealDownButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.FullMealDownButton.Location = New System.Drawing.Point(0, 74)
+        Me.FullMealDownButton.Margin = New System.Windows.Forms.Padding(0, 5, 4, 5)
         Me.FullMealDownButton.Name = "FullMealDownButton"
         Me.FullMealDownButton.Size = New System.Drawing.Size(60, 31)
         Me.FullMealDownButton.TabIndex = 4

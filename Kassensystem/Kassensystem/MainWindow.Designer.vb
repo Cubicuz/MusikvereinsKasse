@@ -26,12 +26,10 @@ Partial Class MainWindow
         Me.MenüplanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoadDiningPlanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatistikToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoadStatisticsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SaveStatisticToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SaveStatisticUnderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MainTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.CashRegisterPanel1 = New Kassensystem.CashRegisterPanel()
         Me.CurrentOrderPanel1 = New Kassensystem.CurrentOrderPanel()
+        Me.NichtVerfügbarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.MainTableLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -42,8 +40,7 @@ Partial Class MainWindow
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenüplanToolStripMenuItem, Me.StatistikToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(9, 3, 0, 3)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1896, 35)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1069, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -51,39 +48,21 @@ Partial Class MainWindow
         '
         Me.MenüplanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadDiningPlanToolStripMenuItem})
         Me.MenüplanToolStripMenuItem.Name = "MenüplanToolStripMenuItem"
-        Me.MenüplanToolStripMenuItem.Size = New System.Drawing.Size(103, 29)
+        Me.MenüplanToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
         Me.MenüplanToolStripMenuItem.Text = "Menüplan"
         '
         'LoadDiningPlanToolStripMenuItem
         '
         Me.LoadDiningPlanToolStripMenuItem.Name = "LoadDiningPlanToolStripMenuItem"
-        Me.LoadDiningPlanToolStripMenuItem.Size = New System.Drawing.Size(210, 30)
+        Me.LoadDiningPlanToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.LoadDiningPlanToolStripMenuItem.Text = "Laden"
         '
         'StatistikToolStripMenuItem
         '
-        Me.StatistikToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadStatisticsToolStripMenuItem, Me.SaveStatisticToolStripMenuItem, Me.SaveStatisticUnderToolStripMenuItem})
+        Me.StatistikToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NichtVerfügbarToolStripMenuItem})
         Me.StatistikToolStripMenuItem.Name = "StatistikToolStripMenuItem"
-        Me.StatistikToolStripMenuItem.Size = New System.Drawing.Size(85, 29)
+        Me.StatistikToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.StatistikToolStripMenuItem.Text = "Statistik"
-        '
-        'LoadStatisticsToolStripMenuItem
-        '
-        Me.LoadStatisticsToolStripMenuItem.Name = "LoadStatisticsToolStripMenuItem"
-        Me.LoadStatisticsToolStripMenuItem.Size = New System.Drawing.Size(219, 30)
-        Me.LoadStatisticsToolStripMenuItem.Text = "Öffnen"
-        '
-        'SaveStatisticToolStripMenuItem
-        '
-        Me.SaveStatisticToolStripMenuItem.Name = "SaveStatisticToolStripMenuItem"
-        Me.SaveStatisticToolStripMenuItem.Size = New System.Drawing.Size(219, 30)
-        Me.SaveStatisticToolStripMenuItem.Text = "Speichern"
-        '
-        'SaveStatisticUnderToolStripMenuItem
-        '
-        Me.SaveStatisticUnderToolStripMenuItem.Name = "SaveStatisticUnderToolStripMenuItem"
-        Me.SaveStatisticUnderToolStripMenuItem.Size = New System.Drawing.Size(219, 30)
-        Me.SaveStatisticUnderToolStripMenuItem.Text = "Speichern unter"
         '
         'MainTableLayoutPanel
         '
@@ -93,13 +72,12 @@ Partial Class MainWindow
         Me.MainTableLayoutPanel.Controls.Add(Me.CashRegisterPanel1, 0, 1)
         Me.MainTableLayoutPanel.Controls.Add(Me.CurrentOrderPanel1, 1, 0)
         Me.MainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MainTableLayoutPanel.Location = New System.Drawing.Point(0, 35)
-        Me.MainTableLayoutPanel.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MainTableLayoutPanel.Location = New System.Drawing.Point(0, 24)
         Me.MainTableLayoutPanel.Name = "MainTableLayoutPanel"
         Me.MainTableLayoutPanel.RowCount = 2
         Me.MainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.MainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.MainTableLayoutPanel.Size = New System.Drawing.Size(1896, 1136)
+        Me.MainTableLayoutPanel.Size = New System.Drawing.Size(1069, 549)
         Me.MainTableLayoutPanel.TabIndex = 2
         '
         'CashRegisterPanel1
@@ -107,10 +85,9 @@ Partial Class MainWindow
         Me.CashRegisterPanel1.AutoSize = True
         Me.CashRegisterPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.CashRegisterPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CashRegisterPanel1.Location = New System.Drawing.Point(4, 725)
-        Me.CashRegisterPanel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CashRegisterPanel1.Location = New System.Drawing.Point(3, 282)
         Me.CashRegisterPanel1.Name = "CashRegisterPanel1"
-        Me.CashRegisterPanel1.Size = New System.Drawing.Size(1276, 406)
+        Me.CashRegisterPanel1.Size = New System.Drawing.Size(779, 264)
         Me.CashRegisterPanel1.TabIndex = 0
         '
         'CurrentOrderPanel1
@@ -119,23 +96,28 @@ Partial Class MainWindow
         Me.CurrentOrderPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.CurrentOrderPanel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.CurrentOrderPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CurrentOrderPanel1.Location = New System.Drawing.Point(1590, 8)
-        Me.CurrentOrderPanel1.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
-        Me.CurrentOrderPanel1.MinimumSize = New System.Drawing.Size(300, 462)
+        Me.CurrentOrderPanel1.Location = New System.Drawing.Point(865, 5)
+        Me.CurrentOrderPanel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CurrentOrderPanel1.MinimumSize = New System.Drawing.Size(200, 300)
         Me.CurrentOrderPanel1.Name = "CurrentOrderPanel1"
         Me.MainTableLayoutPanel.SetRowSpan(Me.CurrentOrderPanel1, 2)
-        Me.CurrentOrderPanel1.Size = New System.Drawing.Size(300, 1120)
+        Me.CurrentOrderPanel1.Size = New System.Drawing.Size(200, 539)
         Me.CurrentOrderPanel1.TabIndex = 1
+        '
+        'NichtVerfügbarToolStripMenuItem
+        '
+        Me.NichtVerfügbarToolStripMenuItem.Name = "NichtVerfügbarToolStripMenuItem"
+        Me.NichtVerfügbarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NichtVerfügbarToolStripMenuItem.Text = "nicht verfügbar"
         '
         'MainWindow
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1896, 1171)
+        Me.ClientSize = New System.Drawing.Size(1069, 573)
         Me.Controls.Add(Me.MainTableLayoutPanel)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "MainWindow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Kassensystem"
@@ -155,7 +137,5 @@ Partial Class MainWindow
     Friend WithEvents CashRegisterPanel1 As CashRegisterPanel
     Friend WithEvents CurrentOrderPanel1 As CurrentOrderPanel
     Friend WithEvents StatistikToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LoadStatisticsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SaveStatisticToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SaveStatisticUnderToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NichtVerfügbarToolStripMenuItem As ToolStripMenuItem
 End Class

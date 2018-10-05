@@ -34,7 +34,7 @@ Public Class MainWindow
         End If
     End Sub
 
-    Private Sub LoadStatisticsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadStatisticsToolStripMenuItem.Click
+    Private Sub LoadStatisticsToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim fd As OpenFileDialog = New OpenFileDialog()
         fd.Title = "Statistik laden"
         fd.InitialDirectory = SpecialDirectories.Desktop
@@ -87,7 +87,7 @@ Public Class MainWindow
         End If
     End Sub
 
-    Private Sub SaveStatisticToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveStatisticToolStripMenuItem.Click
+    Private Sub SaveStatisticToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Try
             If FileIO.OrderOpen Then
                 FileIO.saveOrders()
@@ -99,7 +99,7 @@ Public Class MainWindow
         End Try
     End Sub
 
-    Private Sub SaveStatisticUnderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveStatisticUnderToolStripMenuItem.Click
+    Private Sub SaveStatisticUnderToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
         Dim fd As SaveFileDialog = New SaveFileDialog()
         fd.Title = "Speichern"

@@ -13,7 +13,11 @@ Public Class CurrentOrderPanel
                 mc.Dock = DockStyle.Fill
                 mc.AutoSizeMode = AutoSizeMode.GrowOnly
                 mc.PriceTextBox.Visible = True
-                meal.Amount += 1
+
+                'this is only for testing purpose
+                'meal.Amount += 1
+                mc.Visible = False
+
                 AddHandler meal.amountChanged, Sub()
                                                    If meal.Amount = 0 And meal.AmountHalfPrice = 0 Then
                                                        mc.Visible = False

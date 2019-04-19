@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Billing\Bill.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Dining\DiningPlan.cs" />
     <Compile Include="Dining\Meal.cs" />
     <Compile Include="Dining\MealGroup.cs" />

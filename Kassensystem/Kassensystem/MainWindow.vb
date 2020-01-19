@@ -55,7 +55,7 @@ Public Class MainWindow
 
     Public Function EvaluateStatisticsPath() As String
         Dim time = DateTime.Now
-        If time.Hour < 9 Then
+        If time.Hour < 7 Then 'Tageswechsel um 7, somit muss keiner was speichern
             time = time.AddDays(-1)
         End If
         Dim culture = New System.Globalization.CultureInfo("de-DE")

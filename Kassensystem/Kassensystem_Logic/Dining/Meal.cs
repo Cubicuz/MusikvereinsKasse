@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kassensystem_Logic.Saving;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -97,6 +98,10 @@ namespace Kassensystem_Logic.Dining
 
         public void PayOrder()
         {
+            if (amount != 0 || amountHalfPrice != 0)
+            {
+                MySimpleLogger.log(Name + ":" + amount + ":" + amountHalfPrice);
+            }
             totalAmount += amount;
             Amount = 0;
             totalHalfAmount += amountHalfPrice;

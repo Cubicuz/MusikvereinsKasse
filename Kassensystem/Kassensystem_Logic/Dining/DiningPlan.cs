@@ -84,6 +84,7 @@ namespace Kassensystem_Logic.Dining {
         /// saves the current amounts to the Totals and setts them to 0
         /// </summary>
         public void PayOrder() {
+            MySimpleLogger.log("new Zettel");
             foreach (var mg in Groups)
             {
                 foreach (var m in mg.Meals)

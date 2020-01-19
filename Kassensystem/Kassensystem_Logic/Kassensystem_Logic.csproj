@@ -67,6 +67,7 @@
     <Compile Include="Dining\MealGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Saving\FileIO.cs" />
+    <Compile Include="Saving\MySimpleLogger.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
